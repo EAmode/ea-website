@@ -1,0 +1,31 @@
+.consulting-container {
+  height: 42.5em;
+  margin: 7.25em 0;
+  position: relative;
+}
+
+.consulting-value-prop{
+  height: 100%;
+  right: 0;
+  background: #f7f7f7;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2em;
+  padding: 2em;
+  box-sizing: border-box;
+
+  & .ea-card {
+    height: auto;
+    margin: 0;
+  }
+}
+
+.analytics {
+  grid-column: 1 / 3;
+}
+
+.integration {
+  grid-row: 1 /  span 2;
+  grid-column: 3 / 4
+}
+

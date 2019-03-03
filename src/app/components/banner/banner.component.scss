@@ -1,0 +1,14 @@
+.hero-banner {
+  position: relative;
+  & img {
+    position: absolute;
+    left: -22%;
+    width: 25em;
+    transform: rotate(46deg);
+    z-index: 0;
+    opacity: .3;
+  }
+  h1, h2 {
+    text-align: center;
+  }
+}

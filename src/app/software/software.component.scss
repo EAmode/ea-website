@@ -1,0 +1,55 @@
+.software-section {
+  min-height: 35em;
+  margin: 13.6em 0 7.2em;
+}
+h1,
+h2 {
+  margin: 0;
+}
+h1 {
+  font-size: 3.25em;
+}
+h2 {
+  margin: 18px 0;
+  font-size: 1.65em;
+}
+
+.software-example-container {
+  display: flex;
+  height: 80%;
+  width: 120%;
+  margin-left: -8em;
+}
+
+.software-example {
+  height: 23em;
+  min-width: 16em;
+  box-shadow: var(--ea-box-shadow);
+  margin-right: 1em;
+  &:nth-child(even) {
+    align-self: flex-end;
+  }
+}
+
+.software-text-container {
+  height: 100%;
+  & .empty-div {
+    background: transparent;
+  }
+}
+
+.software-text {
+  align-items: center;
+  background: white;
+  height: 100%;
+  display: flex;
+  z-index: 2;
+}
+
+.shim {
+  height: 100%;
+  width: 100%;
+  background: #333;
+  opacity: .1;
+  position: absolute;
+}
