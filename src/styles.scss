@@ -39,7 +39,7 @@
       align-items: center;
     }
     & h2 {
-      border-bottom: .1em solid #f7f7f7;
+      border-bottom: 0.1em solid #f7f7f7;
       width: fit-content;
     }
   }
@@ -69,16 +69,41 @@
     font-family: "Graphik-Bold", sans-serif;
     font-weight: bold;
     font-size: 4em;
+    @media only screen and (max-width: 600px) {
+      font-size: 3em;
+    }
   }
   h2 {
     font-family: "AdelleSans-Regular", sans-serif;
     font-weight: bold;
     font-size: 2.1em;
+    @media only screen and (max-width: 600px) {
+      font-size: 1.6em;
+    }
   }
   p {
     font-family: "AdelleSans-Regular", sans-serif;
   }
-  ea-footer {
+  li {
+    font-family: "AdelleSans-Regular", sans-serif;
+    font-weight: bold;
+    font-size: 1.25em;
+    color: var(--ea-color-2);
+    list-style: none;
+    margin-bottom: 0.5em;
+    &:before {
+      content: "- ";
+    }
+  }
+  ul {
+    padding: 0;
+  }
+  ea-layout ea-main ea-footer {
+    padding: 4em 0;
     --ea-footer-height: auto;
+    @media only screen and (max-width: 600px) {
+      padding: 4em 7vw;
+      --ea-grid-col-min-width: 15em;
+    }
   }
 }

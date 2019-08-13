@@ -1,6 +1,6 @@
-<div class="software-section" multi-col style="grid-gap: 0;">
+<div class="software-section" multi-col>
   <div class="software-example-container" style="z-index: 0">
-    <div class="software-example">
+    <!-- <div class="software-example">
       <div class="ea-card">
         <div class="ea-card-header">
           <h2>Ea-card</h2>
@@ -12,13 +12,16 @@
           </button>
         </div>
       </div>
-    </div>
+    </div> -->
     <div
       class="software-example"
       style="position: relative; display: flex; align-items: center; justify-content: center;"
     >
       <div class="shim"></div>
-      <div class="ea-card" sm style="z-index: 1; width: 90%;">
+      <div class="ea-card" sm style="z-index: 1; width: 90%; --ea-color-1: #76E2F4; --ea-background-color-hover: #76E2F4; --ea-background-color-active: #76E2F4; --ea-color-1-light: #76E2F4;">
+          <div style="min-height: 3em; max-height: 3em; background: var(--ea-color-1); display: flex; align-items: center; justify-content: center;">
+              <img style="width: 2em;" src="../../assets/images/acme-logo.png" alt="">
+              </div>
         <div class="ea-card-content">
           <h2 style="text-align: center; width: 100%;">Wait a minute!</h2>
           <p style="text-align: center;">
@@ -36,15 +39,18 @@
     <div class="software-example">
       <div
         class="ea-card"
-        style="margin: 0; border: 0; border-radius: 0; height: 100%;"
+        style="margin: 0; border: 0; border-radius: 0; height: 100%; --ea-color-1:#54567A; --ea-color-1-light: #54567A;"
       >
+      <div style="min-height: 3em; max-height: 3em; background: var(--ea-color-1); display: flex; align-items: center; justify-content: center;">
+      <img style="width: 5em;" src="../../assets/images/phonely-logo.png" alt="">
+      </div>
         <div class="ea-card-header" style="padding: 0; display: block;">
-          <ea-tablist
-            horizontal
-            [tabpanelGroup]="exampleTabs"
-            [activate$$]="tabActivate$$"
-          ></ea-tablist>
-        </div>
+            <ea-tablist
+              horizontal
+              [tabpanelGroup]="exampleTabs"
+              [activate$$]="tabActivate$$"
+            ></ea-tablist>
+          </div>
 
         <div class="ea-card-content" style="overflow: auto; padding: 0;">
           <ea-tabpanel-group #exampleTabs style="width: 100%;">
@@ -125,83 +131,6 @@
                 </div>
               </div>
             </ea-tabpanel>
-            <ea-tabpanel name="Recent">
-              <div class="ea-card" sm style="padding:0 1em;">
-                <img src="" alt="" />
-                <h2 style="margin-bottom: 0;">Will</h2>
-                <p style="margin: 0 0 0.25em;">4:25pm @ 555.555.5555</p>
-                <div
-                  style="    align-items: center;
-                    display: flex;
-                    margin-bottom: .5em;
-                    height: 1.7em;"
-                >
-                  <span icon bell style="margin-right: .5em;"></span>
-                  <span icon inbox style="margin-right: .5em;"></span>
-                  <span icon share style="margin-right: .5em;"></span>
-                </div>
-              </div>
-              <div class="ea-card" sm style="padding: 0 1em;">
-                <img src="" alt="" />
-                <h2 style="margin-bottom: 0;">Sebastian</h2>
-                <p style="margin: 0 0 0.25em;">4:25pm @ 555.555.5555</p>
-                <div
-                  style="    align-items: center;
-                  display: flex;
-                  margin-bottom: .5em;
-                  height: 1.7em;"
-                >
-                  <span icon bell style="margin-right: .5em;"></span>
-                  <span icon inbox style="margin-right: .5em;"></span>
-                  <span icon share style="margin-right: .5em;"></span>
-                </div>
-              </div>
-              <div class="ea-card" sm style="padding:0 1em;">
-                <img src="" alt="" />
-                <h2 style="margin-bottom: 0;">Gustavo</h2>
-                <p style="margin: 0 0 0.25em;">4:25pm @ 555.555.5555</p>
-                <div
-                  style="    align-items: center;
-                display: flex;
-                margin-bottom: .5em;
-                height: 1.7em;"
-                >
-                  <span icon bell style="margin-right: .5em;"></span>
-                  <span icon inbox style="margin-right: .5em;"></span>
-                  <span icon share style="margin-right: .5em;"></span>
-                </div>
-              </div>
-              <div class="ea-card" sm style="padding:0 1em;">
-                <img src="" alt="" />
-                <h2 style="margin-bottom: 0;">Bill</h2>
-                <p style="margin: 0 0 0.25em;">4:25pm @ 555.555.5555</p>
-                <div
-                  style="    align-items: center;
-                display: flex;
-                margin-bottom: .5em;
-                height: 1.7em;"
-                >
-                  <span icon bell style="margin-right: .5em;"></span>
-                  <span icon inbox style="margin-right: .5em;"></span>
-                  <span icon share style="margin-right: .5em;"></span>
-                </div>
-              </div>
-              <div class="ea-card" sm style="padding:0 1em;">
-                <img src="" alt="" />
-                <h2 style="margin-bottom: 0;">Mark</h2>
-                <p style="margin: 0 0 0.25em;">4:25pm @ 555.555.5555</p>
-                <div
-                  style="    align-items: center;
-                display: flex;
-                margin-bottom: .5em;
-                height: 1.7em;"
-                >
-                  <span icon bell style="margin-right: .5em;"></span>
-                  <span icon inbox style="margin-right: .5em;"></span>
-                  <span icon share style="margin-right: .5em;"></span>
-                </div>
-              </div>
-            </ea-tabpanel>
             <ea-tabpanel name="Favorites">
               <div role="list">
                 <div
@@ -256,20 +185,14 @@
   </div>
   <div class="software-text-container" style="z-index: 1;">
     <div class="software-text">
-      <div style=" border-left: 1px solid #d3d3d3; height: 95%;"></div>
-      <div style="margin-left: 2em;">
-        <img
-          src="../../assets/images/eang-logo.svg"
-          style="width: 5em;"
-          alt=""
-        />
-        <h1 style="width: 70%;">Scale your front-end development</h1>
-        <h2 style="width: 70%;">
-          We build open source highly customizable comoponents for real-time
-          applications. Create your own customized components and rapidly
-          develop enterprise software.
+      <div class="software-text-border"></div>
+      <div class="text">
+        <h1 >Branded apps in minutes</h1>
+        <h2 >
+          We can apply your corporate brand to our pre-existing library
+          of software widgets to quickly get your project off the ground.
         </h2>
-        <a href="https://eang.io">Try it yourself</a>
+        <a href="mailto:william@eamode.com">Get in Touch</a>
       </div>
     </div>
   </div>

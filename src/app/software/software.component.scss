@@ -1,6 +1,33 @@
 .software-section {
   min-height: 35em;
   margin: 13.6em 0 7.2em;
+  grid-gap: 0;
+  @media only screen and (max-width: 600px) {
+    margin: 5.6em 0 10.2em;
+    grid-gap: 3.5em;
+  }
+}
+.software-text-border {
+  border-left: 1px solid #d3d3d3;
+  height: 95%;
+
+  @media only screen and (max-width: 600px) {
+    border-left: 0;
+
+  }
+}
+.text {
+    margin-left: 2em;
+     & h1, h2 {
+    width: 70%;
+  }
+    @media only screen and (max-width: 600px) {
+      margin-left: 0;
+      padding: 0 2vw;
+      & h1, h2 {
+        width: 100%;
+      }
+    }
 }
 h1,
 h2 {
@@ -17,15 +44,23 @@ h2 {
 .software-example-container {
   display: flex;
   height: 80%;
-  width: 120%;
-  margin-left: -8em;
+  /* width: 120%; */
+  margin-left: 4em;
+  @media only screen and (max-width: 600px) {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    margin-left: 0;
+    overflow: auto;
+    width: 100%;
+  }
 }
 
 .software-example {
   height: 23em;
   min-width: 16em;
   box-shadow: var(--ea-box-shadow);
-  margin-right: 1em;
+  margin-right: 2.5em;
   &:nth-child(even) {
     align-self: flex-end;
   }
@@ -50,6 +85,6 @@ h2 {
   height: 100%;
   width: 100%;
   background: #333;
-  opacity: .1;
+  opacity: 0.1;
   position: absolute;
 }

@@ -4,7 +4,7 @@
   position: relative;
 }
 
-.consulting-value-prop{
+.consulting-value-prop {
   height: 100%;
   right: 0;
   background: #f7f7f7;
@@ -20,12 +20,23 @@
   }
 }
 
+@media only screen and (max-width: 600px) {
+  #value-prop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  #value-prop-container {
+    grid-gap: 2.5em;
+  }
+}
+
 .analytics {
   grid-column: 1 / 3;
 }
 
 .integration {
-  grid-row: 1 /  span 2;
-  grid-column: 3 / 4
+  grid-row: 1 / span 2;
+  grid-column: 3 / 4;
 }
-

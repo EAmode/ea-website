@@ -7,8 +7,15 @@
     transform: rotate(46deg);
     z-index: 0;
     opacity: .3;
+    @media only screen and (max-width: 600px) {
+    left: -55%;
+
+    }
   }
   h1, h2 {
     text-align: center;
+  }
+  @media only screen and (max-width: 600px) {
+    padding: 0 4vw;
   }
 }
