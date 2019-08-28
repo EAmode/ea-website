@@ -1,42 +1,40 @@
-.consulting-container {
-  height: 42.5em;
-  margin: 7.25em 0;
-  position: relative;
+.value-prop-container {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
 }
 
-.consulting-value-prop {
-  height: 100%;
-  right: 0;
-  background: #f7f7f7;
+.value-prop {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 2em;
-  padding: 2em;
-  box-sizing: border-box;
-
-  & .ea-card {
-    height: auto;
-    margin: 0;
-  }
+  justify-content: center;
 }
 
-@media only screen and (max-width: 600px) {
-  #value-prop {
-    display: flex;
+.value-prop > div:first-child {
+  height: 5em;
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (max-width: 750px) {
+  .value-prop {
+    display: grid;
     justify-content: center;
     align-items: center;
     flex-direction: column;
   }
-  #value-prop-container {
+  .value-prop-container {
     grid-gap: 2.5em;
+    display: grid;
+    grid-template-columns: 1fr !important;
   }
 }
 
-.analytics {
-  grid-column: 1 / 3;
+#design-img {
+  height: 4em;
 }
 
-.integration {
-  grid-row: 1 / span 2;
-  grid-column: 3 / 4;
+#develop-img {
+  width: 10em;
+}
+
+#deploy-img {
+  width: 12em;
 }
