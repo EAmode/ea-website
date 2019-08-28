@@ -1,7 +1,11 @@
 .news-container {
   padding: 2.8em 0;
-  margin: 0 0 7.25em 0;
+  margin: 0 0 2.25em 0;
   background: var(--ea-color-3);
+  h2 {
+    margin: 0.4em 2em;
+    text-align: center;
+  }
   @media only screen and (max-width: 600px) {
     padding: 3em 4vw;
     box-sizing: border-box;
@@ -14,19 +18,27 @@
 .news-icons {
   background: var(--ea-color-3);
   height: 8em;
-  --ea-grid-col-min-width: 14em;
+  margin: 2em 0 0 0;
   justify-items: center;
   align-items: center;
   grid-gap: 2.5em;
   @media only screen and (max-width: 600px) {
     height: auto;
   }
+  img {
+    filter: grayscale(90%);
+    opacity: 0.3;
+  }
 }
 
-.bold {
-  text-align: center;
-  width: 70%;
-  @media only screen and (max-width: 600px) {
-    width: 100%;
-  }
+#cga-logo {
+  width: 16em;
+}
+
+#mgmt-logo {
+  width: 12em;
+}
+
+#ecb-clear {
+  width: 3.5em;
 }
