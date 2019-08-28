@@ -99,11 +99,6 @@ h2 {
   margin-bottom: 0;
 }
 
-.ea-card-footer > button {
-  justify-content: center;
-}
-
-
 .grid-cards-text {
   margin: 2em;
   display: grid;
@@ -170,4 +165,16 @@ h2 {
   background: var(--ea-color-1);
   padding: 1em;
   border: 0;
+}
+
+#menu-card-margin {
+  margin: 0;
+}
+
+#menu-card-padding {
+  padding: 0;
+}
+
+#confirm-btn-wrapper {
+  justify-content: center;
 }
