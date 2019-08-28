@@ -1,12 +1,16 @@
-.nav-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+ea-footer {
+  height: auto !important; // change in eang to remove this line
+}
 
-  & a {
-    font-family: "AdelleSans-Regular", sans-serif;
-    font-weight: bold;
-    font-size: 1.25em;
-    color: var(--ea-color-2);
-  }
+ea-footer > div:first-child {
+  display: grid; grid-template-columns: repeat(auto-fit,minmax(22em, 1fr)); grid-gap: 1.5em; align-items: center
+}
+
+#logo-white {
+  width: 12em;
+  transform: filter(100%);
+}
+
+#crown-img {
+  width: 8em;
 }
