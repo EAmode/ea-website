@@ -1,84 +1,77 @@
+ea-tabpanel-group {
+  width: 100%;
+}
+
 .software-section {
+  display: grid;
+  grid-template-columns: 1.5fr 2fr 2fr;
+  align-items: center;
   min-height: 35em;
-  margin: 13.6em 0 7.2em;
-  grid-gap: 0;
-  @media only screen and (max-width: 600px) {
+  margin: 4em 0 0 0;
+  grid-gap: 1em;
+  @media only screen and (max-width: 700px) {
     margin: 5.6em 0 10.2em;
     grid-gap: 3.5em;
+    display: block;
   }
 }
-.software-text-border {
-  border-left: 1px solid #d3d3d3;
-  height: 95%;
 
-  @media only screen and (max-width: 600px) {
-    border-left: 0;
+.shim-card {
+  margin: .7em;
+  width: 90%;
+  --ea-color-1: #76E2F4;
+  --ea-color-1-light: #76E2F4;
+  --ea-background-color-hover: #76E2F4;
+  --ea-background-color-active: #76E2F4; 
+  @media only screen and (max-width: 700px) {
+    margin: auto !important;
+  }
+}
 
-  }
+.phonely-card {
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  height: 100%;
+  --ea-color-1:#54567A;
+  --ea-color-1-light: #54567A;
 }
-.text {
-    margin-left: 2em;
-     & h1, h2 {
-    width: 70%;
-  }
-    @media only screen and (max-width: 600px) {
-      margin-left: 0;
-      padding: 0 2vw;
-      & h1, h2 {
-        width: 100%;
-      }
-    }
+
+.acme-phonely-wrapper {
+  min-height: 3em;
+  max-height: 3em;
+  background: var(--ea-color-1);
+  align-items: center; 
 }
+
+.icon-wrapper {
+  align-items: center;
+  display: flex;
+  margin-bottom: .5em;
+  height: 1.7em;
+}
+
+.icon-wrapper > span {
+  margin-right: .5em;
+}
+
 h1,
 h2 {
   margin: 0;
 }
 h1 {
-  font-size: 3.25em;
+  font-size: 2.25em;
 }
 h2 {
-  margin: 18px 0;
-  font-size: 1.65em;
-}
-
-.software-example-container {
-  display: flex;
-  height: 80%;
-  /* width: 120%; */
-  margin-left: 4em;
-  @media only screen and (max-width: 600px) {
-    display: flex;
-    height: 100%;
-    width: 100%;
-    margin-left: 0;
-    overflow: auto;
-    width: 100%;
-  }
+  margin: 1.5em 0.3em;
 }
 
 .software-example {
+  margin: .7em;
   height: 23em;
   min-width: 16em;
   box-shadow: var(--ea-box-shadow);
   margin-right: 2.5em;
-  &:nth-child(even) {
-    align-self: flex-end;
-  }
-}
-
-.software-text-container {
-  height: 100%;
-  & .empty-div {
-    background: transparent;
-  }
-}
-
-.software-text {
-  align-items: center;
-  background: white;
-  height: 100%;
-  display: flex;
-  z-index: 2;
 }
 
 .shim {
@@ -87,4 +80,94 @@ h2 {
   background: #333;
   opacity: 0.1;
   position: absolute;
+}
+
+.node-wrapper {
+  background: var(--ea-color-2);
+  width: 60%;
+}
+
+.ea-card {
+  padding: 0.3em;
+}
+
+.ea-card > p {
+  margin: 0 0 0.25em;
+}
+
+.ea-card > h2 {
+  margin-bottom: 0;
+}
+
+.ea-card-footer > button {
+  justify-content: center;
+}
+
+
+.grid-cards-text {
+  margin: 2em;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  @media only screen and (max-width: 950px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.flex-cards {
+  display: flex;
+  justify-content: space-between;
+  padding: .5em;
+  @media only screen and (max-width: 950px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.text-branded-apps {
+  padding: .5em;
+}
+
+.text-branded-apps > div:first-child {
+  text-align: center;
+}
+
+.text-branded-apps > div:first-child > div:first-child{
+  text-align: center;
+}
+
+.favorites-list {
+  padding: 0 1em;
+  justify-content: space-between;
+}
+
+#acme-logo {
+  width: 2em;
+}
+
+#phonely-logo {
+  width: 5em;
+}
+
+#phonely-card-content {
+  overflow: auto;
+  padding: 0;
+}
+
+#phonely-card-header {
+  padding: 0;
+  display: block;
+}
+
+#menu-burger-icon {
+  height: 1.5em;
+  width: 1.5em;
+}
+
+#menu-card-header {
+  background: var(--ea-color-1);
+  padding: 1em;
+  border: 0;
 }
