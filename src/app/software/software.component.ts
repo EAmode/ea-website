@@ -20,7 +20,9 @@ export class SoftwareComponent implements OnInit {
         iconStyle: 'ea-negative',
         children: [
           {
-            name: 'Inventory'
+            name: 'Inventory',
+            icon: 'ea-bookmark',
+            iconStyle: 'ea-negative'
           },
         ]
       },

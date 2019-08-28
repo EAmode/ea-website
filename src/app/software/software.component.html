@@ -1,154 +1,96 @@
-<div class="software-section" multi-col>
-  <div class="software-example-container" style="z-index: 0">
-    <!-- <div class="software-example">
-      <div class="ea-card">
-        <div class="ea-card-header">
-          <h2>Ea-card</h2>
-        </div>
-        <div class="ea-card-content"></div>
-        <div class="ea-card-footer">
-          <button>
-            Click to Confirm
-          </button>
-        </div>
+<div class="grid-cards-text">
+  <div class="flex-cards">
+
+    <div class="ea-card shim-card" sm>
+      <div class="flex-content-center acme-phonely-wrapper">
+        <img id="acme-logo" src="../../assets/images/acme-logo.png" alt="" />
       </div>
-    </div> -->
-    <div
-      class="software-example"
-      style="position: relative; display: flex; align-items: center; justify-content: center;"
-    >
-      <div class="shim"></div>
-      <div class="ea-card" sm style="z-index: 1; width: 90%; --ea-color-1: #76E2F4; --ea-background-color-hover: #76E2F4; --ea-background-color-active: #76E2F4; --ea-color-1-light: #76E2F4;">
-          <div style="min-height: 3em; max-height: 3em; background: var(--ea-color-1); display: flex; align-items: center; justify-content: center;">
-              <img style="width: 2em;" src="../../assets/images/acme-logo.png" alt="">
-              </div>
-        <div class="ea-card-content">
-          <h2 style="text-align: center; width: 100%;">Wait a minute!</h2>
-          <p style="text-align: center;">
-            You need to complete the form before you can move on from this
-            section.
-          </p>
-        </div>
-        <div class="ea-card-footer" style="justify-content: center;">
-          <button>
-            Click to Confirm
-          </button>
-        </div>
+      <div class="ea-card-content">
+        <h2 class="text-center w-100">Wait a minute!</h2>
+        <p class="text-center">
+          You need to complete the form before you can move on from this section.
+        </p>
+      </div>
+      <div class="ea-card-footer" id="confirm-btn-wrapper">
+        <button>
+          Click to Confirm
+        </button>
       </div>
     </div>
-    <div class="software-example">
-      <div
-        class="ea-card"
-        style="margin: 0; border: 0; border-radius: 0; height: 100%; --ea-color-1:#54567A; --ea-color-1-light: #54567A;"
-      >
-      <div style="min-height: 3em; max-height: 3em; background: var(--ea-color-1); display: flex; align-items: center; justify-content: center;">
-      <img style="width: 5em;" src="../../assets/images/phonely-logo.png" alt="">
-      </div>
-        <div class="ea-card-header" style="padding: 0; display: block;">
-            <ea-tablist
-              horizontal
-              [tabpanelGroup]="exampleTabs"
-              [activate$$]="tabActivate$$"
-            ></ea-tablist>
-          </div>
 
-        <div class="ea-card-content" style="overflow: auto; padding: 0;">
-          <ea-tabpanel-group #exampleTabs style="width: 100%;">
+    <div class="software-example">
+      <div class="ea-card phonely-card">
+        <div class="flex-content-center acme-phonely-wrapper">
+          <img id="phonely-logo" src="../../assets/images/phonely-logo.png" alt="" />
+        </div>
+        <div class="ea-card-header" id="phonely-card-header">
+          <ea-tablist horizontal [tabpanelGroup]="exampleTabs" [activated$]="tabActivate$$"></ea-tablist>
+        </div>
+
+        <div class="ea-card-content" id="phonely-card-content">
+          <ea-tabpanel-group #exampleTabs>
             <ea-tabpanel id="tab-1" name="Missed">
-              <div class="ea-card" sm style="padding:0 1em;">
+              <div class="ea-card" sm>
                 <img src="" alt="" />
-                <h2 style="margin-bottom: 0;">Will</h2>
-                <p style="margin: 0 0 0.25em;">4:25pm @ 555.555.5555</p>
-                <div
-                  style="    align-items: center;
-                display: flex;
-                margin-bottom: .5em;
-                height: 1.7em;"
-                >
-                  <span icon bell style="margin-right: .5em;"></span>
-                  <span icon inbox style="margin-right: .5em;"></span>
-                  <span icon share style="margin-right: .5em;"></span>
+                <h2>Will</h2>
+                <p>4:25pm @ 555.555.5555</p>
+                <div class="icon-wrapper">
+                  <span icon bell></span>
+                  <span icon inbox></span>
+                  <span icon share></span>
                 </div>
               </div>
-              <div class="ea-card" sm style="padding: 0 1em;">
+              <div class="ea-card" sm>
                 <img src="" alt="" />
-                <h2 style="margin-bottom: 0;">Sebastian</h2>
-                <p style="margin: 0 0 0.25em;">4:25pm @ 555.555.5555</p>
-                <div
-                  style="    align-items: center;
-              display: flex;
-              margin-bottom: .5em;
-              height: 1.7em;"
-                >
-                  <span icon bell style="margin-right: .5em;"></span>
-                  <span icon inbox style="margin-right: .5em;"></span>
-                  <span icon share style="margin-right: .5em;"></span>
+                <h2>Sebastian</h2>
+                <p>4:25pm @ 555.555.5555</p>
+                <div class="icon-wrapper">
+                  <span icon bell></span>
+                  <span icon inbox></span>
+                  <span icon share></span>
                 </div>
               </div>
-              <div class="ea-card" sm style="padding:0 1em;">
+              <div class="ea-card" sm>
                 <img src="" alt="" />
-                <h2 style="margin-bottom: 0;">Gustavo</h2>
-                <p style="margin: 0 0 0.25em;">4:25pm @ 555.555.5555</p>
-                <div
-                  style="    align-items: center;
-            display: flex;
-            margin-bottom: .5em;
-            height: 1.7em;"
-                >
-                  <span icon bell style="margin-right: .5em;"></span>
-                  <span icon inbox style="margin-right: .5em;"></span>
-                  <span icon share style="margin-right: .5em;"></span>
+                <h2>Gustavo</h2>
+                <p>4:25pm @ 555.555.5555</p>
+                <div class="icon-wrapper">
+                  <span icon bell></span>
+                  <span icon inbox></span>
+                  <span icon share></span>
                 </div>
               </div>
-              <div class="ea-card" sm style="padding:0 1em;">
+              <div class="ea-card" sm>
                 <img src="" alt="" />
-                <h2 style="margin-bottom: 0;">Bill</h2>
-                <p style="margin: 0 0 0.25em;">4:25pm @ 555.555.5555</p>
-                <div
-                  style="    align-items: center;
-            display: flex;
-            margin-bottom: .5em;
-            height: 1.7em;"
-                >
-                  <span icon bell style="margin-right: .5em;"></span>
-                  <span icon inbox style="margin-right: .5em;"></span>
-                  <span icon share style="margin-right: .5em;"></span>
+                <h2>Bill</h2>
+                <p>4:25pm @ 555.555.5555</p>
+                <div class="icon-wrapper">
+                  <span icon bell></span>
+                  <span icon inbox></span>
+                  <span icon share></span>
                 </div>
               </div>
-              <div class="ea-card" sm style="padding:0 1em;">
+              <div class="ea-card" sm>
                 <img src="" alt="" />
-                <h2 style="margin-bottom: 0;">Mark</h2>
-                <p style="margin: 0 0 0.25em;">4:25pm @ 555.555.5555</p>
-                <div
-                  style="    align-items: center;
-            display: flex;
-            margin-bottom: .5em;
-            height: 1.7em;"
-                >
-                  <span icon bell style="margin-right: .5em;"></span>
-                  <span icon inbox style="margin-right: .5em;"></span>
-                  <span icon share style="margin-right: .5em;"></span>
+                <h2>Mark</h2>
+                <p>4:25pm @ 555.555.5555</p>
+                <div class="icon-wrapper">
+                  <span icon bell></span>
+                  <span icon inbox></span>
+                  <span icon share></span>
                 </div>
               </div>
             </ea-tabpanel>
             <ea-tabpanel name="Favorites">
+              <!-- After update list in eang change these roles -->
               <div role="list">
-                <div
-                  role="listitem"
-                  style="padding: 0 1em; justify-content: space-between;"
-                >
+                <div role="listitem" class="favorites-list">
                   Will <span icon external-link></span>
                 </div>
-                <div
-                  role="listitem"
-                  style="padding: 0 1em; justify-content: space-between;"
-                >
+                <div role="listitem" class="favorites-list">
                   Sebastian <span icon external-link></span>
                 </div>
-                <div
-                  role="listitem"
-                  style="padding: 0 1em; justify-content: space-between;"
-                >
+                <div role="listitem" class="favorites-list">
                   Sofia <span icon external-link></span>
                 </div>
               </div>
@@ -157,43 +99,33 @@
         </div>
       </div>
     </div>
+
     <div class="software-example">
-      <div class="ea-card" style="margin: 0; height: 100%;">
-        <div
-          class="ea-card-header"
-          style="background: var(--ea-color-1); padding: 1em; border: 0;"
-        >
-          <span
-            icon
-            hamburger-menu
-            negative
-            style="height: 1.5em; width: 1.5em;"
-          ></span>
+      <div class="ea-card h-100" id="menu-card-margin">
+        <div class="ea-card-header" id="menu-card-header" >
+          <span icon hamburger-menu negative id="menu-burger-icon"></span>
         </div>
-        <div class="ea-card-content" style="padding: 0; height: 100%;">
-          <div
-            style="background: var(--ea-color-2);
-          width: 60%;
-          height: 100%;
-          --ea-menu-color: white;"
-          >
+        <div class="ea-card-content h-100" id="menu-card-padding">
+          <div class="h-100 node-wrapper">
             <ea-menu [node]="example"></ea-menu>
           </div>
         </div>
       </div>
     </div>
+
   </div>
-  <div class="software-text-container" style="z-index: 1;">
-    <div class="software-text">
-      <div class="software-text-border"></div>
-      <div class="text">
-        <h1 >Branded apps in minutes</h1>
-        <h2 >
-          We can apply your corporate brand to our pre-existing library
-          of software widgets to quickly get your project off the ground.
-        </h2>
+
+  <div class="text-branded-apps">
+    <div>
+      <h1>Branded apps in minutes</h1>
+      <h2>
+        We can apply your corporate brand to our pre-existing library of software
+        widgets to quickly get your project off the ground.
+      </h2>
+      <div>
         <a href="mailto:william@eamode.com">Get in Touch</a>
       </div>
     </div>
   </div>
+
 </div>
