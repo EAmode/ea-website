@@ -15,42 +15,10 @@
 }
 
 .mode {
-  --ea-toolbar-background: white;
-  --ea-main-background: white;
-
-  ea-toolbar {
-    --ea-toolbar-height: 5em;
-    & button {
-      display: none;
-    }
-  }
-
   ea-layout {
     ea-body {
-      --ea-body-display: block;
-      --ea-main-margin: 0;
+      display: grid;
     }
-  }
-
-  ea-footer {
-    --ea-footer-height: 16em;
-    --ea-footer-background: var(--ea-color-2);
-    & [multi-col] {
-      align-items: center;
-    }
-    & h2 {
-      border-bottom: 0.1em solid #f7f7f7;
-      width: fit-content;
-    }
-  }
-
-  .sub-footer {
-    height: 3em;
-    background: #f7f7f7;
-  }
-
-  .ea-card {
-    box-sizing: border-box;
   }
 
   a {
@@ -61,8 +29,33 @@
     border-bottom: 0.1em solid var(--ea-color-1-light);
   }
 
-  .hero-banner {
-    margin: 7.25em 0 14.5em 0;
+  a:hover,
+  a:visited,
+  a:link,
+  a:active {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .flex-content-center {
+    display: flex;
+    justify-content: center;
+  }
+
+  .w-100 {
+    width: 100%;
+  }
+
+  .h-100 {
+    height: 100%;
+  }
+
+  .align-items-center {
+    align-items: center;
+  }
+
+  .text-center {
+    text-align: center;
   }
 
   h1 {
@@ -76,7 +69,7 @@
   h2 {
     font-family: "AdelleSans-Regular", sans-serif;
     font-weight: bold;
-    font-size: 2.1em;
+    font-size: 1.5rem;
     @media only screen and (max-width: 600px) {
       font-size: 1.6em;
     }
@@ -98,12 +91,8 @@
   ul {
     padding: 0;
   }
-  ea-layout ea-main ea-footer {
-    padding: 4em 0;
-    --ea-footer-height: auto;
-    @media only screen and (max-width: 600px) {
-      padding: 4em 7vw;
-      --ea-grid-col-min-width: 15em;
-    }
+
+  ea-layout > ea-toolbar {
+    background-color: white;
   }
 }
