@@ -4,7 +4,7 @@ ea-tabpanel-group {
 
 .software-section {
   display: grid;
-  grid-template-columns: 1.5fr 2fr 2fr;
+  grid-template-columns: 2fr 2fr 2fr;
   align-items: center;
   min-height: 35em;
   margin: 4em 0 0 0;
@@ -62,14 +62,12 @@ h2 {
 h1 {
   font-size: 2.25em;
 }
-h2 {
-  margin: 1.5em 0.3em;
-}
 
 .software-example {
   margin: .7em;
   height: 23em;
   min-width: 16em;
+  max-width: 20em;
   box-shadow: var(--ea-box-shadow);
   margin-right: 2.5em;
 }
@@ -100,10 +98,10 @@ h2 {
 }
 
 .grid-cards-text {
-  margin: 2em;
+  margin: 1em;
   display: grid;
   grid-template-columns: 2fr 1fr;
-  @media only screen and (max-width: 950px) {
+  @media only screen and (max-width: 1050px) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -111,9 +109,9 @@ h2 {
 }
 
 .flex-cards {
-  display: flex;
-  justify-content: space-between;
-  padding: .5em;
+  display: grid;
+  padding: 0.5em;
+  grid-template-columns: 1fr 1fr 1fr;
   @media only screen and (max-width: 950px) {
     display: flex;
     flex-direction: column;
@@ -122,14 +120,21 @@ h2 {
 }
 
 .text-branded-apps {
-  padding: .5em;
+  padding: 0.5em;
+  border-left: 0.1em #ccc solid;
+  @media only screen and (max-width: 1050px) {
+    border-left: none;
+  }
 }
 
 .text-branded-apps > div:first-child {
-  text-align: center;
+  text-align: left;
+  @media only screen and (max-width: 950px) {
+    text-align: center;
+  }
 }
 
-.text-branded-apps > div:first-child > div:first-child{
+.text-branded-apps > div:first-child > div:first-child {
   text-align: center;
 }
 
