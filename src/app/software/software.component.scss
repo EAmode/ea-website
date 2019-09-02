@@ -108,6 +108,13 @@ h1 {
   }
 }
 
+.phone-card {
+  margin-top: 90px;
+  @media only screen and (max-width: 950px) {
+    margin-top: 0;
+  }
+}
+
 .flex-cards {
   display: grid;
   padding: 0.5em;
