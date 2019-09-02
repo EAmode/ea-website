@@ -21,6 +21,11 @@
     }
   }
 
+  app-consulting, app-news {
+    height: fit-content;
+    background: rgba(222, 222, 222, 0.5);
+  }
+
   a {
     font-family: "AdelleSans-Regular", sans-serif;
     font-weight: bold;
@@ -95,4 +100,9 @@
   ea-layout > ea-toolbar {
     background-color: white;
   }
+
+  ea-layout > ea-main > ea-footer {
+    background: var(--ea-color-2);
+  }
+
 }
