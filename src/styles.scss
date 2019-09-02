@@ -103,6 +103,7 @@
   }
 
   ea-layout > ea-main > ea-footer {
+    height: auto !important; // change in eang to remove this line
     background: var(--ea-color-2);
   }
 
