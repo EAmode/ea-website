@@ -112,6 +112,7 @@ h1 {
   display: grid;
   padding: 0.5em;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1.5em;
   @media only screen and (max-width: 950px) {
     display: flex;
     flex-direction: column;

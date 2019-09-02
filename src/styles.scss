@@ -17,7 +17,8 @@
 .mode {
   ea-layout {
     ea-body {
-      display: grid;
+      flex-direction: column;
+      justify-content: space-between;
     }
   }
 
