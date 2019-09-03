@@ -1,12 +1,12 @@
 .banner {
-  margin: 7.25em 0;
+  margin: 5em 0;
   display: flex;
   justify-content: center;
   position: relative;
   & img {
     position: absolute;
     left: -25%;
-    top: -20%;
+    top: -60%;
     width: 25em;
     transform: rotate(46deg);
     z-index: 0;
@@ -22,4 +22,9 @@
   @media only screen and (max-width: 600px) {
     padding: 0 4vw;
   }
+}
+
+.banner > div {
+  z-index: 1;
+  max-width: 1080px;
 }

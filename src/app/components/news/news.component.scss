@@ -1,7 +1,10 @@
 .news-container {
-  padding: 2.8em 0;
+  padding: 2em 0;
+ /*
+ padding: 2.8em 0;
   margin: 0 0 2.25em 0;
   background: var(--ea-color-3);
+  */
   h2 {
     margin: 0.4em 2em;
     text-align: center;
@@ -16,8 +19,10 @@
 }
 
 .news-icons {
-  background: var(--ea-color-3);
+  /*
+  background: var(--ea-color-3); 
   height: 8em;
+  */
   margin: 2em 0 0 0;
   justify-items: center;
   align-items: center;

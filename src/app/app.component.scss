@@ -1,9 +1,18 @@
-ea-footer {
-  height: auto !important; // change in eang to remove this line
+ea-footer > div:first-child {
+  display: grid;
+  grid-template-columns: 22em 1fr;
+  grid-gap: 1.5em;
+  align-items: center;
+  @media only screen and  (max-width: 650px) {
+    display: flex;
+    padding: 2em 1.5em;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
-ea-footer > div:first-child {
-  display: grid; grid-template-columns: repeat(auto-fit,minmax(22em, 1fr)); grid-gap: 1.5em; align-items: center
+ea-footer > div:first-child > div {
+  margin: 1em;
 }
 
 #logo-white {

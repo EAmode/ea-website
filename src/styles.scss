@@ -17,8 +17,14 @@
 .mode {
   ea-layout {
     ea-body {
-      display: grid;
+      flex-direction: column;
+      justify-content: space-between;
     }
+  }
+
+  app-consulting, app-news {
+    height: fit-content;
+    background: rgba(222, 222, 222, 0.5);
   }
 
   a {
@@ -95,4 +101,10 @@
   ea-layout > ea-toolbar {
     background-color: white;
   }
+
+  ea-layout > ea-main > ea-footer {
+    height: auto !important; // change in eang to remove this line
+    background: var(--ea-color-2);
+  }
+
 }
