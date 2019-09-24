@@ -1,5 +1,24 @@
+:host {
+  display: block;
+}
+
 ea-tabpanel-group {
   width: 100%;
+}
+
+a {
+  text-align: left;
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: 0.15em solid var(--ea-color-1-light);
+  --ea-sizer: 1.8;
+}
+
+a:hover,
+a:visited,
+a:link,
+a:active {
+  text-decoration: none;
 }
 
 .software-section {
@@ -17,12 +36,12 @@ ea-tabpanel-group {
 }
 
 .shim-card {
-  margin: .7em;
+  margin: 0.7em;
   width: 90%;
-  --ea-color-1: #76E2F4;
-  --ea-color-1-light: #76E2F4;
-  --ea-background-color-hover: #76E2F4;
-  --ea-background-color-active: #76E2F4; 
+  --ea-color-1: #76e2f4;
+  --ea-color-1-light: #76e2f4;
+  --ea-background-color-hover: #76e2f4;
+  --ea-background-color-active: #76e2f4;
   @media only screen and (max-width: 700px) {
     margin: auto !important;
   }
@@ -33,38 +52,39 @@ ea-tabpanel-group {
   border: 0;
   border-radius: 0;
   height: 100%;
-  --ea-color-1:#54567A;
-  --ea-color-1-light: #54567A;
+  --ea-color-1: #54567a;
+  --ea-color-1-light: #54567a;
 }
 
 .acme-phonely-wrapper {
   min-height: 3em;
   max-height: 3em;
   background: var(--ea-color-1);
-  align-items: center; 
+  align-items: center;
 }
 
 .icon-wrapper {
   align-items: center;
   display: flex;
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
   height: 1.7em;
 }
 
 .icon-wrapper > span {
-  margin-right: .5em;
+  margin-right: 0.5em;
 }
 
 h1,
 h2 {
   margin: 0;
+  text-align: left;
 }
 h1 {
   font-size: 2.25em;
 }
 
 .software-example {
-  margin: .7em;
+  margin: 0.7em;
   height: 23em;
   min-width: 16em;
   max-width: 20em;

@@ -1,26 +1,21 @@
 <ea-layout>
   <ea-toolbar shadow>
-    <div class="w-100 flex-content-center">
-      <div max-width class="align-items-center flex-content-center">
-        <img id="crown-img" src="../assets/images/crown.svg" alt="" />
-      </div>
-    </div>
+    <img class="logo" src="/assets/images/crown.svg" alt="EA Mode Logo" />
+    <!-- <button class="ea-button" icon flat rounded (click)="changeColorScheme()">
+      <span icon filter></span>
+    </button> -->
   </ea-toolbar>
-
-  <ea-main>
-    <ea-body>
+  <ea-body>
+    <ea-main role="main">
       <app-banner></app-banner>
       <app-consulting></app-consulting>
       <app-software></app-software>
       <app-news></app-news>
-    </ea-body>
+    </ea-main>
     <ea-footer>
       <div>
         <div>
-          <img id="logo-white"
-          src="../assets/images/logo-white.svg"
-          alt=""
-          />
+          <img id="logo-white" src="../assets/images/logo-white.svg" alt="" />
         </div>
         <div>
           <h2>About Us</h2>
@@ -33,5 +28,5 @@
         </div>
       </div>
     </ea-footer>
-  </ea-main>
+  </ea-body>
 </ea-layout>

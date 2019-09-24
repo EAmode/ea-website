@@ -1,25 +1,26 @@
-ea-footer > div:first-child {
-  display: grid;
-  grid-template-columns: 22em 1fr;
-  grid-gap: 1.5em;
-  align-items: center;
-  @media only screen and  (max-width: 650px) {
-    display: flex;
-    padding: 2em 1.5em;
-    flex-direction: column;
-    align-items: flex-start;
+ea-toolbar {
+  justify-content: center;
+  & .logo {
+    height: 80%;
   }
 }
 
-ea-footer > div:first-child > div {
-  margin: 1em;
+ea-footer {
+  > div:first-child {
+    display: grid;
+    grid-template-columns: 22em 1fr;
+    grid-gap: 1.5em;
+    align-items: center;
+    @media only screen and (max-width: 650px) {
+      display: flex;
+      padding: 2em 1.5em;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
 }
 
 #logo-white {
   width: 12em;
   transform: filter(100%);
-}
-
-#crown-img {
-  width: 8em;
 }
