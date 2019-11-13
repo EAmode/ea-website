@@ -28,3 +28,31 @@
     max-width: 40em;
   }
 }
+
+@media only screen and (max-width: 800px) {
+  .banner {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    & img {
+      position: absolute;
+      left: var(--banner-img-left);
+      // top: -60%;
+      width: 25em;
+      transform: rotate(46deg);
+      z-index: 0;
+      opacity: 0.0;
+    }
+    h1 {
+      --ea-sizer: 2;
+    }
+    h2 {
+      --ea-sizer: 1.4;
+    }
+  
+    > div {
+      z-index: 1;
+      max-width: 40em;
+    }
+  }
+}
