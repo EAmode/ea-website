@@ -1,32 +1,13 @@
-<div class="grid-cards-text">
-  <div class="flex-cards">
-
-    <div class="software-example">
-      <div class="ea-card shim-card" sm>
-        <div class="flex-content-center acme-phonely-wrapper">
-          <img id="acme-logo" src="../../assets/images/acme-logo.png" alt="" />
-        </div>
-        <div class="ea-card-content">
-          <h2 class="text-center w-100">Wait a minute!</h2>
-          <p class="text-center">
-            You need to complete the form before you can move on from this section.
-          </p>
-        </div>
-        <div class="ea-card-footer" id="confirm-btn-wrapper">
-          <button>
-            Click to Confirm
-          </button>
-        </div>
-      </div>
-    </div>
-
+<div class="software-examples" style="background-color: white;">
+  <div class="software-example-container">
     <div class="software-example phone-card">
       <div class="ea-card phonely-card">
-        <div class="flex-content-center acme-phonely-wrapper">
-          <img id="phonely-logo" src="../../assets/images/phonely-logo.png" alt="" />
-        </div>
         <div class="ea-card-header" id="phonely-card-header">
-          <ea-tablist horizontal [tabpanelGroup]="exampleTabs" [activated$]="tabActivate$$"></ea-tablist>
+          <ea-tablist
+            horizontal
+            [tabpanelGroup]="exampleTabs"
+            [activated$]="tabActivate$$"
+          ></ea-tablist>
         </div>
 
         <div class="ea-card-content" id="phonely-card-content">
@@ -101,7 +82,10 @@
         </div>
       </div>
     </div>
+    <div class="caption"><strong>Example:</strong> phone dialer</div>
+  </div>
 
+  <div class="software-example-container">
     <div class="software-example">
       <div class="ea-card h-100" id="menu-card-margin">
         <div class="ea-card-header" id="menu-card-header">
@@ -114,20 +98,29 @@
         </div>
       </div>
     </div>
-
+    <div class="caption"><strong>Example:</strong> navigation menu</div>
   </div>
 
-  <div class="text-branded-apps">
-    <div>
-      <h1>Branded apps in minutes</h1>
-      <h2>
-        We can apply your corporate brand to our pre-existing library of software
-        widgets to quickly get your project off the ground.
-      </h2>
-      <div>
-        <a href="mailto:info@eamode.com">Get in Touch</a>
+  <div class="software-example-container">
+    <div class="software-example">
+      <div class="ea-card shim-card" sm>
+        <div class="flex-content-center acme-phonely-wrapper">
+          <img id="acme-logo" src="../../assets/images/acme-logo.png" alt="" />
+        </div>
+        <div class="ea-card-content">
+          <h2 class="text-center w-100">Wait a minute!</h2>
+          <p class="text-center">
+            You need to complete the form before you can move on from this
+            section.
+          </p>
+        </div>
+        <div class="ea-card-footer" id="confirm-btn-wrapper">
+          <button>
+            Click to Confirm
+          </button>
+        </div>
       </div>
     </div>
+    <div class="caption"><strong>Example:</strong> alert window</div>
   </div>
-
 </div>

@@ -52,7 +52,7 @@ a:active {
   border: 0;
   border-radius: 0;
   height: 100%;
-  --ea-color-1: #54567a;
+  --ea-color-1: #9798b3;
   --ea-color-1-light: #54567a;
 }
 
@@ -87,7 +87,7 @@ h1 {
   margin: 0.7em;
   height: 23em;
   min-width: 16em;
-  max-width: 20em;
+  max-width: 16em;
   box-shadow: var(--ea-box-shadow);
   margin-right: 2.5em;
 }
@@ -129,22 +129,38 @@ h1 {
 }
 
 .phone-card {
-  margin-top: 90px;
+   
   @media only screen and (max-width: 950px) {
     margin-top: 0;
   }
 }
 
-.flex-cards {
+.software-example-container {
+  align-self: center;
+  justify-self: center;
+}
+
+.software-examples {
   display: grid;
-  padding: 0.5em;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
   grid-gap: 1.5em;
-  @media only screen and (max-width: 950px) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  padding-bottom: 4em;
+  padding-bottom: 4em;
+  @media only screen and (max-width: 1150px) {
+    .software-example-container {
+      align-self: center;
+      justify-self: center;
+    }
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+
   }
+}
+
+.caption {
+  color: gray;
+  text-align: center;
 }
 
 .text-branded-apps {
