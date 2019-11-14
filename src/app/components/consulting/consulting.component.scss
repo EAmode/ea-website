@@ -1,8 +1,17 @@
 :host {
  display: flex;
-  background: var(--ea-background-2);
+  //background: var(--ea-background-2);
+  background: gray;
   justify-content: center;
+  font-size: calc(var(--ea-sizer) * 1.5rem);
+
+  h2, p {
+    color: rgb(235, 235, 235);
+  }
+  padding: 2em 3em;
 }
+
+
 
 .section-container {
   display: flex;
