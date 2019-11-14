@@ -1,229 +1,257 @@
 :host {
-  display: block;
-}
-
-ea-tabpanel-group {
-  width: 100%;
-}
-
-a {
-  text-align: left;
-  font-weight: bold;
-  text-decoration: none;
-  border-bottom: 0.15em solid var(--ea-color-1-light);
-  --ea-sizer: 1.8;
-}
-
-a:hover,
-a:visited,
-a:link,
-a:active {
-  text-decoration: none;
-}
-
-.software-section {
-  display: grid;
-  grid-template-columns: 2fr 2fr 2fr;
-  align-items: center;
-  min-height: 35em;
-  margin: 4em 0 0 0;
-  grid-gap: 1em;
-  @media only screen and (max-width: 700px) {
-    margin: 5.6em 0 10.2em;
-    grid-gap: 3.5em;
-    display: block;
-  }
-}
-
-.shim-card {
-  margin: 0.7em;
-  width: 90%;
-  --ea-color-1: #76e2f4;
-  --ea-color-1-light: #76e2f4;
-  --ea-background-color-hover: #76e2f4;
-  --ea-background-color-active: #76e2f4;
-  @media only screen and (max-width: 700px) {
-    margin: auto !important;
-  }
-}
-
-.phonely-card {
-  margin: 0;
-  border: 0;
-  border-radius: 0;
-  height: 100%;
-  --ea-color-1: #9798b3;
-  --ea-color-1-light: #54567a;
-}
-
-.acme-phonely-wrapper {
-  min-height: 3em;
-  max-height: 3em;
-  background: var(--ea-color-1);
-  align-items: center;
-}
-
-.icon-wrapper {
-  align-items: center;
   display: flex;
-  margin-bottom: 0.5em;
-  height: 1.7em;
-}
+  //  background: var(--ea-background-2);
+   justify-content: center;
+ }
 
-.icon-wrapper > span {
-  margin-right: 0.5em;
-}
+ .section-container {
+   display: flex;
+   flex-direction: row;
+   max-width: 60em;
 
-h1,
-h2 {
-  margin: 0;
-  text-align: left;
-}
-h1 {
-  font-size: 2.25em;
-}
+   & img {
+     width: 15em; height: auto;
+     padding-right: 3em;
+   }
 
-.software-example {
-  margin: 0.7em;
-  height: 23em;
-  min-width: 16em;
-  max-width: 16em;
-  box-shadow: var(--ea-box-shadow);
-  margin-right: 2.5em;
-}
+   & li {
+     list-style: none;
+     margin-bottom: 1em;
+   }
+ }
 
-.shim {
-  height: 100%;
-  width: 100%;
-  background: #333;
-  opacity: 0.1;
-  position: absolute;
-}
+ @media only screen and (max-width: 750px) {
+   .section-container {
+     flex-direction: column;
+   }
+ }
 
-.node-wrapper {
-  background: var(--ea-color-2);
-  width: 60%;
-}
+// :host {
+//   display: block;
+// }
 
-.ea-card {
-  padding: 0.3em;
-}
+// ea-tabpanel-group {
+//   width: 100%;
+// }
 
-.ea-card > p {
-  margin: 0 0 0.25em;
-}
+// a {
+//   text-align: left;
+//   font-weight: bold;
+//   text-decoration: none;
+//   border-bottom: 0.15em solid var(--ea-color-1-light);
+//   --ea-sizer: 1.8;
+// }
 
-.ea-card > h2 {
-  margin-bottom: 0;
-}
+// a:hover,
+// a:visited,
+// a:link,
+// a:active {
+//   text-decoration: none;
+// }
 
-.grid-cards-text {
-  margin: 1em;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  @media only screen and (max-width: 1050px) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-}
+// .software-section {
+//   display: grid;
+//   grid-template-columns: 2fr 2fr 2fr;
+//   align-items: center;
+//   min-height: 35em;
+//   margin: 4em 0 0 0;
+//   grid-gap: 1em;
+//   @media only screen and (max-width: 700px) {
+//     margin: 5.6em 0 10.2em;
+//     grid-gap: 3.5em;
+//     display: block;
+//   }
+// }
 
-.phone-card {
-   
-  @media only screen and (max-width: 950px) {
-    margin-top: 0;
-  }
-}
+// .shim-card {
+//   margin: 0.7em;
+//   width: 90%;
+//   --ea-color-1: #76e2f4;
+//   --ea-color-1-light: #76e2f4;
+//   --ea-background-color-hover: #76e2f4;
+//   --ea-background-color-active: #76e2f4;
+//   @media only screen and (max-width: 700px) {
+//     margin: auto !important;
+//   }
+// }
 
-.software-example-container {
-  align-self: center;
-  justify-self: center;
-}
+// .phonely-card {
+//   margin: 0;
+//   border: 0;
+//   border-radius: 0;
+//   height: 100%;
+//   --ea-color-1: #9798b3;
+//   --ea-color-1-light: #54567a;
+// }
 
-.software-examples {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  grid-gap: 1.5em;
-  padding-bottom: 4em;
-  padding-bottom: 4em;
-  @media only screen and (max-width: 1150px) {
-    .software-example-container {
-      align-self: center;
-      justify-self: center;
-    }
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+// .acme-phonely-wrapper {
+//   min-height: 3em;
+//   max-height: 3em;
+//   background: var(--ea-color-1);
+//   align-items: center;
+// }
 
-  }
-}
+// .icon-wrapper {
+//   align-items: center;
+//   display: flex;
+//   margin-bottom: 0.5em;
+//   height: 1.7em;
+// }
 
-.caption {
-  color: gray;
-  text-align: center;
-}
+// .icon-wrapper > span {
+//   margin-right: 0.5em;
+// }
 
-.text-branded-apps {
-  padding: 0.5em;
-  border-left: 0.1em #ccc solid;
-  @media only screen and (max-width: 1050px) {
-    border-left: none;
-  }
-}
+// h1,
+// h2 {
+//   margin: 0;
+//   text-align: left;
+// }
+// h1 {
+//   font-size: 2.25em;
+// }
 
-.text-branded-apps > div:first-child {
-  text-align: left;
-  @media only screen and (max-width: 950px) {
-    text-align: center;
-  }
-}
+// .software-example {
+//   margin: 0.7em;
+//   height: 23em;
+//   min-width: 16em;
+//   max-width: 16em;
+//   box-shadow: var(--ea-box-shadow);
+//   margin-right: 2.5em;
+// }
 
-.text-branded-apps > div:first-child > div:first-child {
-  text-align: center;
-}
+// .shim {
+//   height: 100%;
+//   width: 100%;
+//   background: #333;
+//   opacity: 0.1;
+//   position: absolute;
+// }
 
-.favorites-list {
-  padding: 0 1em;
-  justify-content: space-between;
-}
+// .node-wrapper {
+//   background: var(--ea-color-2);
+//   width: 60%;
+// }
 
-#acme-logo {
-  width: 2em;
-}
+// .ea-card {
+//   padding: 0.3em;
+// }
 
-#phonely-logo {
-  width: 5em;
-}
+// .ea-card > p {
+//   margin: 0 0 0.25em;
+// }
 
-#phonely-card-content {
-  overflow: auto;
-  padding: 0;
-}
+// .ea-card > h2 {
+//   margin-bottom: 0;
+// }
 
-#phonely-card-header {
-  padding: 0;
-  display: block;
-}
+// .grid-cards-text {
+//   margin: 1em;
+//   display: grid;
+//   grid-template-columns: 2fr 1fr;
+//   @media only screen and (max-width: 1050px) {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//   }
+// }
 
-#menu-burger-icon {
-  height: 1.5em;
-  width: 1.5em;
-}
+// .phone-card {
 
-#menu-card-header {
-  background: var(--ea-color-1);
-  padding: 1em;
-  border: 0;
-}
+//   @media only screen and (max-width: 950px) {
+//     margin-top: 0;
+//   }
+// }
 
-#menu-card-margin {
-  margin: 0;
-}
+// .software-example-container {
+//   align-self: center;
+//   justify-self: center;
+// }
 
-#menu-card-padding {
-  padding: 0;
-}
+// .software-examples {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr 1fr;
+//   grid-template-rows: 1fr;
+//   grid-gap: 1.5em;
+//   padding-bottom: 4em;
+//   padding-bottom: 4em;
+//   @media only screen and (max-width: 1150px) {
+//     .software-example-container {
+//       align-self: center;
+//       justify-self: center;
+//     }
+//     grid-template-columns: 1fr;
+//     grid-template-rows: 1fr 1fr 1fr;
 
-#confirm-btn-wrapper {
-  justify-content: center;
-}
+//   }
+// }
+
+// .caption {
+//   color: gray;
+//   text-align: center;
+// }
+
+// .text-branded-apps {
+//   padding: 0.5em;
+//   border-left: 0.1em #ccc solid;
+//   @media only screen and (max-width: 1050px) {
+//     border-left: none;
+//   }
+// }
+
+// .text-branded-apps > div:first-child {
+//   text-align: left;
+//   @media only screen and (max-width: 950px) {
+//     text-align: center;
+//   }
+// }
+
+// .text-branded-apps > div:first-child > div:first-child {
+//   text-align: center;
+// }
+
+// .favorites-list {
+//   padding: 0 1em;
+//   justify-content: space-between;
+// }
+
+// #acme-logo {
+//   width: 2em;
+// }
+
+// #phonely-logo {
+//   width: 5em;
+// }
+
+// #phonely-card-content {
+//   overflow: auto;
+//   padding: 0;
+// }
+
+// #phonely-card-header {
+//   padding: 0;
+//   display: block;
+// }
+
+// #menu-burger-icon {
+//   height: 1.5em;
+//   width: 1.5em;
+// }
+
+// #menu-card-header {
+//   background: var(--ea-color-1);
+//   padding: 1em;
+//   border: 0;
+// }
+
+// #menu-card-margin {
+//   margin: 0;
+// }
+
+// #menu-card-padding {
+//   padding: 0;
+// }
+
+// #confirm-btn-wrapper {
+//   justify-content: center;
+// }
