@@ -1,35 +1,39 @@
 :host {
-  display: flex;
-  //  background: var(--ea-background-2);
-  justify-content: center;
+  background: var(--ea-background-1);
+  background: white;
+  display: flex;  
   font-size: calc(var(--ea-sizer) * 1.5rem);
+  justify-content: center;
+  padding: 2em 3em;
 
-  h2, p {
+  h2,
+  p {
     color: gray;
-  }  
-  padding: 2em 3em;  
+  }
 }
 
 .section-container {
   display: flex;
   flex-direction: row;
   max-width: 60em;
+  text-align: justify;
 
   & img {
-    width: 15em;
     height: auto;
+    margin: auto;
     padding-right: 3em;
-  }
-
-  & li {
-    list-style: none;
-    margin-bottom: 1em;
+    width: 15em;
   }
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 1250px) {
   .section-container {
     flex-direction: column;
+    justify-content: center;
+
+    & img {
+      padding-right: 0em;
+    }
   }
 }
 
