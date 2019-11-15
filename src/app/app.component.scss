@@ -6,21 +6,51 @@ ea-toolbar {
 }
 
 ea-footer {
-  > div:first-child {
-    display: grid;
-    grid-template-columns: 22em 1fr;
-    grid-gap: 1.5em;
-    align-items: center;
-    @media only screen and (max-width: 650px) {
-      display: flex;
-      padding: 2em 1.5em;
-      flex-direction: column;
-      align-items: flex-start;
+  display: flex;
+  padding: 2em 1.5em;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  // > div:first-child {
+  //   display: grid;
+  //   grid-template-columns: 22em 1fr;
+  //   grid-gap: 1.5em;
+  //   align-items: center;
+  //   @media only screen and (max-width: 650px) {
+
+  //   }
+  // }
+  .logo {
+    padding: 2em 1em;
+    & img {
+      width: 12em;
+      transform: filter(100%);
+    }
+    & .copyright {
+      font-size: calc(var(--ea-sizer) * 0.8rem);
+      padding-top: 1em;
+      font-weight: 400;
+      text-align: center;
+      color: #828092;
     }
   }
-}
 
-#logo-white {
-  width: 12em;
-  transform: filter(100%);
+  .about-us {
+
+    padding: 0em 1em;
+    max-width: 35em;
+    & p {
+      line-height: 1.16em;
+    }
+    & h2 {
+      // text-decoration: underline;
+    }
+  }
+  .contact-us {
+    padding: 0em 1em;
+    max-width: 35em;
+    & a {
+      text-decoration: underline;
+    }
+  }
 }
