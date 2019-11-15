@@ -1,31 +1,42 @@
 :host {
   display: block;
   text-align: center;
-  margin: 6em 1em 12em;
+  margin: 10em 1em 12em;
+  min-height: 800px;
+
+  @media only screen and (max-width: 800px) {
+    min-height: 500px;
+  }
 }
 .banner {
   display: flex;
   justify-content: center;
   position: relative;
-  & img {
-    position: absolute;
-    left: var(--banner-img-left);
-    // top: -60%;
-    width: 25em;
-    transform: rotate(46deg);
-    z-index: 0;
-    opacity: 0.3;
-  }
+
   h1 {
-    --ea-sizer: 2;
+    --ea-sizer: 1.4;
   }
   h2 {
-    --ea-sizer: 1.4;
+    --ea-sizer: 1.1;
   }
 
   > div {
     z-index: 1;
     max-width: 40em;
+  }
+
+  & #background {
+    left: var(--banner-img-left);
+    opacity: 0.2;
+    position: absolute;
+    transform: rotate(46deg);
+    width: 30em;
+    z-index: 0;
+  }
+
+  & #arrow {
+    margin-top: 2em;
+    height: 15%;
   }
 }
 
@@ -34,25 +45,10 @@
     display: flex;
     justify-content: center;
     position: relative;
-    & img {
-      position: absolute;
-      left: var(--banner-img-left);
-      // top: -60%;
-      width: 25em;
-      transform: rotate(46deg);
-      z-index: 0;
-      opacity: 0.0;
-    }
-    h1 {
-      --ea-sizer: 2;
-    }
-    h2 {
-      --ea-sizer: 1.4;
+
+    & #background {
+      width: 15em;
     }
   
-    > div {
-      z-index: 1;
-      max-width: 40em;
-    }
   }
 }
