@@ -5,7 +5,7 @@
   font-size: calc(var(--ea-sizer) * 1.5rem);
   justify-content: center;
   padding: 2em 3em;
-  
+
   h2,
   p {
     color: rgb(235, 235, 235);
@@ -15,7 +15,7 @@
 .section-container {
   display: flex;
   flex-direction: row;
-  max-width: 60em;
+  max-width: 55em;
   text-align: justify;
 
   & img {
