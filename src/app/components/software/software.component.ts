@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Subject } from 'rxjs';
-import { EangElement } from '@eamode/eang';
+import { Component, OnInit } from '@angular/core'
+import { Subject } from 'rxjs'
+import { EangElement } from '@eamode/eang'
 
 @Component({
   selector: 'app-software',
@@ -8,7 +8,7 @@ import { EangElement } from '@eamode/eang';
   styleUrls: ['./software.component.scss']
 })
 export class SoftwareComponent implements OnInit {
-  tabActivate$$ = new Subject<EangElement>();
+  tabActivate$$ = new Subject<EangElement>()
 
   example = {
     name: '',
@@ -23,7 +23,7 @@ export class SoftwareComponent implements OnInit {
             name: 'Inventory',
             icon: 'ea-bookmark',
             iconStyle: 'ea-negative'
-          },
+          }
         ]
       },
       {
@@ -42,7 +42,7 @@ export class SoftwareComponent implements OnInit {
         iconStyle: 'ea-negative'
       }
     ]
-  };
+  }
   constructor() {}
 
   ngOnInit() {}

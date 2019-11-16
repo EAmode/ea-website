@@ -6,7 +6,7 @@ import { Component } from '@angular/core'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  year = (new Date()).getFullYear()
+  year = new Date().getFullYear()
 
   changeColorScheme() {
     const element = document.getElementsByTagName('app-root')
