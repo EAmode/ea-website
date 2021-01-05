@@ -1,27 +1,30 @@
-# EaMode
+<p align="center">
+  <img width="200" src="https://open-wc.org/hero.png"></img>
+</p>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.1.
+## Open-wc Starter App
 
-## Development server
+[![Built with open-wc recommendations](https://img.shields.io/badge/built%20with-open--wc-blue.svg)](https://github.com/open-wc)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Quickstart
 
-## Code scaffolding
+To get started:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```sh
+npm init @open-wc
+# requires node 10 & npm 6 or higher
+```
 
-## Build
+## Scripts
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- `start` runs your app for development, reloading on file changes
+- `start:build` runs your app after it has been built using the build command
+- `build` builds your app and outputs it in your `dist` directory
+- `test` runs your test suite with Web Test Runner
+- `lint` runs the linter for your project
 
-## Running unit tests
+## Tooling configs
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+For most of the tools, the configuration is in the `package.json` to reduce the amount of files in your project.
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+If you customize the configuration a lot, you can consider moving them to individual files.
