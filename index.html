@@ -3,38 +3,214 @@
 
 <head>
   <meta charset="utf-8">
+  <title>EA Mode | Consulting & Software</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="Description" content="Put your description here.">
+  <meta name="Description"
+    content="Consulting and Software company helping you to succeed! Company: EA Mode, Location: Washinton, DC" />
   <base href="/">
-  <link rel="stylesheet" href="./src/css/styles.css">
-  <title>EA Mode</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
 </head>
 
-<body>
-  <header>
-    <h2>Home Page</h2>
-    <a href="index.html">Home (LOGO HERE)</a>
-    <a href="consulting.html">Consulting</a>
-    <a href="software.html">Software</a>
-    <a href="mode.html">Mode</a>
-
-  </header>
-  <main>
-    <section class="hero">
-      Hero banner here
-
-      contact us action item?
-    </section>
-
-    <section class="testimonials">
-      testimonials - company logos ...
-    </section>
-
-  </main>
-
-  <footer>
-    footer here
-  </footer>
+<body id="scroll" class="mode">
+  <div class="header">
+      <div class="container">
+          <div class="row flex-layout">
+              <div class="col-md-2">
+                  <div class="logo">
+                      <img src="assets/images/logo.png" alt="Logo">
+                  </div>
+              </div>
+              <div class="col-md-9" id="menu">
+                  <div class="menu">
+                      <ul>
+                          <li><a href="#">Consulting</a></li>
+                          <li><a href="#">Software Development</a></li>
+                          <li><a href="#">MODE</a></li>
+                          <li><a href="#">About Us</a></li>
+                      </ul>
+                  </div>
+                  <div class="menu-mobile hidden" id="menu-mobile">
+                      <a href="javascript:void(0)"><i class="fa fa-bars"></i></a>
+                  </div>
+              </div>
+              <div class="col-md-1">
+                  <div class="switch">
+                      <div class="os-toggler-w" id="on_off">
+                          <div class="os-toggler-i">
+                              <div class="os-toggler-pill"><i class="fas fa-sun" id="icon"></i></div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="main">
+      <div class="banner">
+          <img src="assets/images/slider.jpg" alt="Execute faster, worry less">
+          <div class="content">
+              <h1>
+                  Execute faster,<br>worry less
+              </h1>
+              <p>
+                  Our services help companies to innovate from initial concept to<br>
+                  final product launch.
+              </p>
+              <a href="#"></a>
+          </div>
+      </div>
+      <div class="consulting container-fluid block">
+          <div class="wrap">
+              <div class="image">
+                  <img src="assets/images/consulting.png" alt="Software">
+              </div>
+              <div class="content">
+                  <h3>Consulting</h3>
+                  <p><span class="text-bold">Business Process Management</span> - Monitor and optimize business
+                      processes to improve productivity, efficiency, and operational costs and take advantage of
+                      technological advancements</p>
+                  <p><span class="text-bold">Cloud Strategy</span> – Leverage 12-factor app methodology to design
+                      secure, scalable apps that realize the full benefits of cloud infrastructure</p>
+                  <p><span class="text-bold">Solution Architecture</span> - Effectively manage responses to disruptive
+                      forces by identifying and analyzing the execution of change toward desired business vision and
+                      outcomes</p>
+                  <p><span class="text-bold">Training</span> - Empower your people with cutting edge knowledge.</p>
+              </div>
+          </div>
+      </div>
+      <div class="software container-fluid block">
+          <div class="wrap">
+              <div class="image">
+                  <img src="assets/images/deverlop.png" alt="Mode">
+              </div>
+              <div class="content">
+                  <h3>Software Development</h3>
+                  <p><span class="text-bold">Artificial Intelligence</span> - Leverage modern automated data analysis
+                      techniques such as machine learning to identify and exploit patterns and relationships in your
+                      data</p>
+                  <p><span class="text-bold">Cloud Migration</span> – Modernize legacy business applications to
+                      leverage modern technologies such as cloud, mobile, and artificial intelligence. Move data,
+                      workflows, end user applications from on-premise servers to public or private cloud
+                      infrastructures</p>
+                  <p><span class="text-bold">Web Development</span> - Provide access to your business information and
+                      capabilities through visually appealing experiences and interactions based on UX design.
+                      Integrate data from APIs, microservices, and blockchain.</p>
+              </div>
+          </div>
+      </div>
+      <div class="mode container-fluid block">
+          <div class="wrap">
+              <div class="image">
+               <img src="assets/images/mode.png" alt="Consulting">
+              </div>
+              <div class="content">
+                  <h3>Mode</h3>
+                  <p><span class="text-bold">NextGen Cloud</span> - Cloud development made easy! Automatically gain
+                      resiliency, observability, and security by default. No need to deal with the enormous complexity
+                      of having to create architecture on AWS or Azure cloud.</p>
+                  <p><span class="text-bold">Business Process Transparency</span> – Combine business process
+                      documentation and automation in one place. Always have a full picture of your business and get
+                      alerted if things go wrong.</p>
+                  <p><span class="text-bold">No-Code to Full-Code</span> - Easily integrate functionality by dragging
+                      in existing components or develop whatever you want. Running everything that can be
+                      containerized.</p>
+              </div>
+          </div>
+      </div>
+      <div class="brand container-fluid">
+          <div class="wrap">
+              <h3>We become trusted advisors to our clients by consistently<br>
+                  delivering high-impact results.</h3>
+              <div class="list-brand">
+                  <ul>
+                      <li><a href="#"><img src="assets/images/brand.png" alt="Brand 01"></a></li>
+                      <li><a href="#"><img src="assets/images/brand2.png" alt="Brand 02"></a></li>
+                      <li><a href="#"><img src="assets/images/brand-3.png" alt="Brand 03"></a></li>
+                      <li><a href="#"><img src="assets/images/brand-4.png" alt="Brand 04"></a></li>
+                      <li><a href="#"><img src="assets/images/brand-5.png" alt="Brand 05"></a></li>
+                      <li><a href="#"><img src="assets/images/brand-6.png" alt="Brand 06"></a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="footer">
+      <div class="footer-top">
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-4">
+                      <div class="logo-footer">
+                          <img src="assets/images/logo-footer.png" alt="Logo Footer">
+                      </div>
+                      <div class="copyright">
+                          <p>Copyright © 2021 EA Mode LLC. All rights reserved.</p>
+                      </div>
+                  </div>
+                  <div class="col-md-4">
+                      <div class="footer-info">
+                          <h5 class="title-info">
+                              Contact Us
+                          </h5>
+                          <ul>
+                              <li><a href="mailto:info@eamode.com">info@eamode.com</a></li>
+                              <li><a href="mailto:support@eamode.com">support@eamode.com</a></li>
+                          </ul>
+                      </div>
+                  </div>
+                  <div class="col-md-4">
+                      <div class="footer-info">
+                          <h5 class="title-info">
+                              About Us
+                          </h5>
+                          <p>
+                              EA Mode, LLC is a high-touch consulting firm that specializes in strategy, design, and
+                              software development. We work with innovative organizations in financial services,
+                              healthcare, and the public sector.
+                          </p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="footer-bottom">
+          <div class="container">
+              <div class="row flex-layout content">
+                  <div class="col-md-2">
+                      <div class="social-share">
+                          <ul>
+                              <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                              <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                              <li><a href="#"><i class="fab fa-github"></i></a></li>
+                          </ul>
+                      </div>
+                  </div>
+                  <div class="col-md-9">
+                      <div class="menu">
+                          <ul>
+                              <li><a href="#">Consulting</a></li>
+                              <li><a href="#">Software Development</a></li>
+                              <li><a href="#">MODE</a></li>
+                              <li><a href="#">About Us</a></li>
+                          </ul>
+                      </div>
+                  </div>
+                  <div class="col-md-1">
+                      <div class="switch">
+                          <div class="os-toggler-w" id="on_off_2">
+                              <div class="os-toggler-i">
+                                  <div class="os-toggler-pill"><i class="fas fa-sun" id="icon_2"></i></div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="./assets/js/eamode.js"></script>
 
 
   <script type="module" src="./out-tsc/src/eamode-website.js"></script>
