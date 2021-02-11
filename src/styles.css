@@ -3,14 +3,53 @@
 @import './css/pro.min.css';
 @import './css/fonts.css';
 
+header {
+  &.navbar {
+    padding: calc(var(--ea-spacer) * 1em) 0;
+  }
+  .navbar-brand {
+    padding: 0 calc(var(--ea-spacer) * 2em) 0 0;
+    img {
+      height: 3em;
+    }
+  }
+
+  nav {
+    a {
+      font: 500 calc(var(--ea-sizer) * 1.2em) 'Roboto';
+      color: var(--ea-color-1-dark);
+      padding: 0.1em 0.5em;
+      margin: 0.1em 0.5em;
+      &.active {
+        font-weight: 700;
+      }
+      &:hover {
+        color: var(--ea-color-1-dark);
+        font-weight: 700;
+      }
+    }
+  }
+  ul {
+    width: 100%;
+  }
+  div.right {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  button.action {
+    white-space: nowrap;
+    /* overflow: hidden;
+    text-overflow: ellipsis; */
+  }
+}
+
 .flex-layout {
   display: flex;
   display: -webkit-flex;
 }
 
-body {
-  font-size: 16px;
-}
 ul,
 li {
   list-style: none;

@@ -1,3 +1,4 @@
+@import '@eamode/eang/lib/themes/_base.css';
 @import '@eamode/eang/lib/themes/mode/button-mixin.css';
 
 @mixin button-mode .mode;
