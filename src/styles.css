@@ -1,7 +1,5 @@
 @import './css/mode.css';
 @import 'bootstrap/dist/css/bootstrap.css';
-/* @import './css/pro.min.css'; */
-/* @import './css/fonts.css'; */
 
 h1 {
   font-size: calc(var(--ea-sizer) * 4em);
@@ -42,8 +40,10 @@ header {
   }
   nav.ea-nav {
     padding: calc(var(--ea-spacer) * 1em) 0;
+    --ea-sizer: 1.2;
+    font-weight: 600;
   }
-  --ea-nav-font: 500 calc(var(--ea-sizer) * 1.2em) 'Roboto';
+  /* --ea-nav-font: 600 calc(var(--ea-sizer) * 1.0em) 'Roboto'; */
   --ea-nav-hover-color: var(--ea-color-1);
 
   div.grow {
@@ -100,7 +100,9 @@ section {
     left: 10%;
     z-index: -999;
     img {
+      height: auto;
       width: inherit;
+      aspect-ratio: attr(width) / attr(height);
     }
   }
   .after {
@@ -110,14 +112,18 @@ section {
     right: 10%;
     z-index: -999;
     img {
+      height: auto;
       width: inherit;
+      aspect-ratio: attr(width) / attr(height);
     }
   }
 
   .image-col {
     padding: 0 0 calc(var(--ea-spacer) * 4em) 0;
     img {
+      height: auto;
       width: 100%;
+      aspect-ratio: attr(width) / attr(height);
       max-width: 22em;
       display: block;
       margin-left: auto;
@@ -283,7 +289,7 @@ footer {
       }
     }
   }
-    section {
+  section {
     .before {
       width: 60%;
       left: 2%;
