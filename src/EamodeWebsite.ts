@@ -1,5 +1,4 @@
 import { LitElement, html, css, property } from 'lit-element';
-import { openWcLogo } from './open-wc-logo.js';
 
 export class EamodeWebsite extends LitElement {
   @property({ type: String }) title = 'My app';
@@ -50,7 +49,7 @@ export class EamodeWebsite extends LitElement {
   render() {
     return html`
       <main>
-        <div class="logo">${openWcLogo}</div>
+        
         <h1>${this.title}</h1>
 
         <p>Edit <code>src/EamodeWebsite.js</code> and save to reload.</p>

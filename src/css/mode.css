@@ -1,7 +1,9 @@
 @import '@eamode/eang/lib/themes/_base.css';
 @import '@eamode/eang/lib/themes/mode/button-mixin.css';
+@import '@eamode/eang/lib/themes/mode/nav-mixin.css';
 
 @mixin button-mode .mode;
+@mixin nav-mode .mode;
 
 .mode {
   /* Base Colors */
