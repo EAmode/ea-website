@@ -1,10 +1,10 @@
 @import './css/mode.css';
 @import 'bootstrap/dist/css/bootstrap.css';
-@import './css/pro.min.css';
-@import './css/fonts.css';
+/* @import './css/pro.min.css'; */
+/* @import './css/fonts.css'; */
 
 h1 {
-  font-size: 65px;
+  font-size: calc(var(--ea-sizer) * 4em);
   font-weight: 600;
   line-height: 0.9;
   margin-top: 0;
@@ -12,19 +12,24 @@ h1 {
 }
 
 h2 {
-  font: 600 calc(var(--ea-sizer) * 2.5em) 'Roboto';
+  font-size: calc(var(--ea-sizer) * 2.5em);
+  font-weight: 600;
   color: var(--ea-color-1-dark);
   letter-spacing: -1px;
   margin-bottom: calc(var(--ea-spacer) * 0.7em);
 }
 
 h3 {
-  font: 500 calc(var(--ea-sizer) * 2.5em) 'Roboto';
+  font-size: calc(var(--ea-sizer) * 2.5em);
+  font-weight: 500;
   color: var(--ea-color-1-dark);
   letter-spacing: -1px;
 }
 
 header {
+  background-color: var(--ea-background-transparent-1);
+  border: var(--ea-border-1);
+
   &.navbar {
     padding: calc(var(--ea-spacer) * 1em) 0;
   }
@@ -83,18 +88,40 @@ header {
 }
 
 section {
+  position: relative;
   padding: calc(var(--ea-spacer) * 6em) 0;
+
   &.software {
     background-color: #f1f2f8;
   }
+  .before {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    z-index: -999;
+    img {
+      width: inherit;
+    }
+  }
+  .after {
+    position: absolute;
+    text-align: right;
+    bottom: 0;
+    right: 10%;
+    z-index: -999;
+    img {
+      width: inherit;
+    }
+  }
+
   .image-col {
+    padding: 0 0 calc(var(--ea-spacer) * 4em) 0;
     img {
       width: 100%;
       max-width: 22em;
       display: block;
       margin-left: auto;
       margin-right: auto;
-      /* padding: 0 calc(var(--ea-spacer) * 4em) 0 0; */
     }
   }
 
@@ -161,7 +188,8 @@ footer {
   .title {
     margin: 0;
     padding: calc(var(--ea-spacer) * 0.8em) 0 calc(var(--ea-spacer) * 0.5em) 0;
-    font: 600 calc(var(--ea-sizer) * 1.2em) 'Roboto';
+    fony-size: calc(var(--ea-sizer) * 1.2em);
+    font-weight: 600;
   }
 
   .content {
@@ -200,38 +228,41 @@ footer {
 
   .footer-bottom {
     display: flex;
-    align-items: center;
     padding: calc(var(--ea-spacer) * 2em) 0;
-    .social-share {
-      ul {
+    align-items: center;
+
+    .social-share ul {
+      display: flex;
+      li {
+        min-width: 3em;
+        line-height: 3em;
+        border-radius: 100%;
+        background-color: var(--ea-text-color-2);
         display: flex;
-        li {
-          min-width: 3em;
-          line-height: 3em;
-          border-radius: 100%;
-          background-color: var(--ea-text-color-2);
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          margin-right: 1em;
-          a {
-            color: #212d60;
-            font-size: 22px;
-          }
-          &:hover {
-            .fa-youtube {
-              color: #d7292c !important;
-            }
-            .fa-linkedin {
-              color: #1178b5;
-            }
-            .fa-github {
-              color: #222222;
-            }
-          }
+        justify-content: center;
+        align-items: center;
+        margin-right: 1em;
+        a {
+          color: #212d60;
+          font-size: 22px;
         }
+        svg {
+          height: 1em;
+        }
+        /* &:hover {
+          .fa-youtube {
+            color: #d7292c !important;
+          }
+          .fa-linkedin {
+            color: #1178b5;
+          }
+          .fa-github {
+            color: #222222;
+          }
+        } */
       }
     }
+
     .action {
       display: flex;
       align-items: center;
@@ -246,22 +277,41 @@ footer {
 @media (max-width: 768px) {
   header {
     nav.ea-nav {
+      padding: calc(var(--ea-spacer) * 2.2em) 0 calc(var(--ea-spacer) * 1em) 0;
       ul {
         flex-direction: column;
       }
+    }
+  }
+    section {
+    .before {
+      width: 60%;
+      left: 2%;
+    }
+    .after {
+      width: 80%;
+      right: 2%;
     }
   }
 }
 
 @media (max-width: 576px) {
   :root {
-    --ea-spacer: 0.6;
+    --ea-spacer: 0.5;
   }
 
   section {
+    .before {
+      width: 60%;
+      left: 2%;
+    }
+    .after {
+      width: 80%;
+      right: 2%;
+    }
     .image-col {
       img {
-        max-width: 18em;
+        max-width: 16em;
       }
     }
   }

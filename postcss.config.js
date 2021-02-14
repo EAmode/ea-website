@@ -8,9 +8,19 @@ module.exports = ctx => {
       require('postcss-mixins')(),
       require('postcss-nested')(),
     ],
+  };
+  if (ctx.env === 'production') {
+    // config.plugins.push(
+    //   require('cssnano')({
+    //     preset: [
+    //       'default',
+    //       {
+    //         discardComments: { removeAll: true },
+    //         minifyFontValues: { removeQuotes: false },
+    //       },
+    //     ],
+    //   })
+    // );
   }
-  if(ctx.env === 'production'){
-    config.plugins.push(require('cssnano')())
-  }
-  return config
-}
+  return config;
+};

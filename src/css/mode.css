@@ -1,4 +1,5 @@
 @import '@eamode/eang/lib/themes/_base.css';
+@import '@eamode/eang/lib/themes/mode/fonts.css';
 @import '@eamode/eang/lib/themes/mode/button-mixin.css';
 @import '@eamode/eang/lib/themes/mode/nav-mixin.css';
 
@@ -44,11 +45,13 @@
   --ea-background-1: hsl(0, 0%, 100%);
   --ea-background-2: hsl(0, 0%, 97%);
 
+  --ea-background-transparent-1: hsla(0, 0%, 100%, 0.95);
+
   /* Borders */
   --ea-border-1: 0.0625em solid hsla(0, 0%, 70%, 0.5);
 
   /* Fonts & Typography */
-  --ea-font-1-family: 'Roboto';
+  --ea-font-1-family: 'Roboto', sans-serif;
   --ea-font-1-style: normal;
   --ea-font-1-weight: 400;
 
@@ -58,7 +61,7 @@
   font-family: var(--ea-font-1-family);
   font-style: var(--ea-font-1-style);
   font-weight: var(--ea-font-1-weight);
-  color: var(--ea-color);
+  color: var(--ea-text-color-1);
 }
 
 .mode.ea-color-scheme-dark {
