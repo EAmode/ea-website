@@ -6,7 +6,8 @@
     "start:build": "npm run build && web-dev-server --root-dir dist --app-index index.html --open --compatibility none",
     "start": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds\" \"npm run css -- --dir css -w\"",
     "precss": "rimraf css",
-    "css": "postcss \"./src/styles.css\" "
+    "css": "postcss \"./src/styles.css\" ",
+    "upgrade:prod": "npm run build && eactl update website eamode.com dist/ -e mode"
   },
   "name": "eamode-website",
   "version": "0.0.1",
