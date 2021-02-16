@@ -1,3 +1,4 @@
-import { EamodeWebsite } from './EamodeWebsite.js';
+// import { ColorSchemeToggle } from '@eamode/eang';
+// customElements.define('ea-color-scheme-toggle', ColorSchemeToggle);
 
-customElements.define('eamode-website', EamodeWebsite);
+import '@eamode/eang';
