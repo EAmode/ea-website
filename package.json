@@ -7,7 +7,7 @@
     "start": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds\" \"npm run css -- --dir css -w\"",
     "precss": "rimraf css",
     "css": "postcss \"./src/styles.css\" ",
-    "upgrade:prod": "npm run build && eactl update website eamode.com dist/ -e mode"
+    "update:prod": "npm run build && eactl update website eamode.com dist/ -e mode"
   },
   "name": "eamode-website",
   "version": "0.0.1",
