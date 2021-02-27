@@ -24,7 +24,7 @@ const baseConfig = createSpaConfig({
 export default merge(baseConfig, {
   // if you use createSpaConfig, you can use your index.html as entrypoint,
   // any <script type="module"> inside will be bundled by rollup
-  input: './index.html',
+  input: './*.html',
   plugins: [
     copy({
       targets: [{ src: './assets/**/*', dest: './dist' }],
