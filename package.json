@@ -1,57 +1,85 @@
 {
-  "name": "ea-website",
-  "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "build:prod": "ng build --configuration=production",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
-    "format": "prettier --write src/**/*.{ts,json,js,scss} && prettier --write e2e/src/**/*.{ts,json,js}"
+    "lint": "eslint --ext .ts,.html . --ignore-path .gitignore && prettier \"**/*.ts\" --check --ignore-path .gitignore",
+    "format": "eslint --ext .ts,.html . --fix --ignore-path .gitignore && prettier \"**/*.ts\" --write --ignore-path .gitignore",
+    "build": "rimraf dist && tsc && rollup -c rollup.config.js && npm run css -- --dir dist/css --env production --no-map",
+    "start:build": "npm run build && web-dev-server --root-dir dist --app-index index.html --open --compatibility none",
+    "start": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds\" \"npm run css -- --dir css -w\"",
+    "precss": "rimraf css",
+    "css": "postcss \"./src/styles.css\" ",
+    "update:prod": "npm run build && eactl update website eamode.com dist/ -e mode"
   },
-  "private": true,
+  "name": "eamode-website",
+  "version": "0.0.1",
+  "description": "EA Mode Website",
+  "author": "EA Mode LLC",
+  "license": "MIT",
+  "dependencies": {
+    "lit-element": "^2.4.0",
+    "lit-html": "^1.3.0",
+    "rxjs": "^6.6.3"
+  },
+  "devDependencies": {
+    "@open-wc/building-rollup": "^1.9.4",
+    "@open-wc/eslint-config": "^4.2.0",
+    "@typescript-eslint/eslint-plugin": "^4.15.0",
+    "@typescript-eslint/parser": "^4.15.0",
+    "@web/dev-server": "^0.1.7",
+    "bootstrap": "^5.0.0-beta2",
+    "concurrently": "^5.3.0",
+    "cssnano": "^4.1.10",
+    "cssnano-preset-default": "^4.0.7",
+    "deepmerge": "^4.2.2",
+    "eslint": "^7.20.0",
+    "eslint-config-prettier": "^7.2.0",
+    "husky": "^5.0.9",
+    "lint-staged": "^10.5.4",
+    "postcss": "^8.2.6",
+    "postcss-cli": "^8.3.1",
+    "postcss-import": "^14.0.0",
+    "postcss-mixins": "^7.0.3",
+    "postcss-nested": "^5.0.3",
+    "prettier": "^2.2.1",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.39.0",
+    "rollup-plugin-copy": "^3.3.0",
+    "tslib": "^2.1.0",
+    "typescript": "^4.1.5"
+  },
+  "eslintConfig": {
+    "parser": "@typescript-eslint/parser",
+    "extends": [
+      "@open-wc/eslint-config",
+      "eslint-config-prettier"
+    ],
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "rules": {
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": [
+        "error"
+      ],
+      "import/no-unresolved": "off",
+      "import/extensions": [
+        "error",
+        "always",
+        {
+          "ignorePackages": true
+        }
+      ]
+    }
+  },
   "prettier": {
     "semi": false,
     "singleQuote": true,
-    "printWidth": 80
+    "arrowParens": "avoid"
   },
-  "dependencies": {
-    "@angular/animations": "~8.2.14",
-    "@angular/common": "~8.2.14",
-    "@angular/compiler": "~8.2.14",
-    "@angular/core": "~8.2.14",
-    "@angular/forms": "~8.2.14",
-    "@angular/platform-browser": "~8.2.14",
-    "@angular/platform-browser-dynamic": "~8.2.14",
-    "@angular/router": "~8.2.14",
-    "@eamode/eang": "3.1.1",
-    "core-js": "3.2.1",
-    "rxjs": "6.5.3",
-    "tslib": "1.10.0",
-    "zone.js": "0.10.2"
-  },
-  "devDependencies": {
-    "@angular-devkit/build-angular": "0.803.19",
-    "@angular/cli": "8.3.19",
-    "@angular/compiler-cli": "8.2.14",
-    "@angular/language-service": "8.2.14",
-    "@types/jasmine": "3.4.0",
-    "@types/jasminewd2": "2.0.6",
-    "@types/node": "12.7.2",
-    "codelyzer": "5.1.0",
-    "jasmine-core": "3.4.0",
-    "jasmine-spec-reporter": "4.2.1",
-    "karma": "4.2.0",
-    "karma-chrome-launcher": "3.1.0",
-    "karma-coverage-istanbul-reporter": "2.1.0",
-    "karma-jasmine": "2.0.1",
-    "karma-jasmine-html-reporter": "1.4.2",
-    "prettier": "^1.19.1",
-    "protractor": "5.4.2",
-    "ts-node": "8.3.0",
-    "tslint": "5.19.0",
-    "typescript": "3.5.3"
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
   }
 }
