@@ -71,6 +71,7 @@
     }
   },
   "prettier": {
+    "semi": false,
     "singleQuote": true,
     "arrowParens": "avoid"
   },

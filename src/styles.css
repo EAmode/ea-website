@@ -62,7 +62,7 @@ header {
     justify-content: flex-end;
     align-items: center;
 
-    ea-color-scheme-toggle{
+    ea-color-scheme-toggle {
       color: var(--ea-color-1);
     }
   }
@@ -72,6 +72,7 @@ header {
   }
 }
 
+/* index.html */
 .banner {
   /* width: 100%; */
   background: url(/assets/images/slider.jpg) var(--ea-color-1) no-repeat center
@@ -161,6 +162,20 @@ section {
       border: 3px solid var(--ea-text-color-2);
       text-align: center;
     }
+  }
+}
+
+/* mode.html */
+.company-input {
+  display: flex;
+  align-items: flex-start;
+  input {
+    min-width: 6em;
+    max-width: 8em;
+  }
+  p {
+    font-size: calc(var(--ea-sizer) * 1.8em);
+    margin: 0;
   }
 }
 
