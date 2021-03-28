@@ -29,15 +29,15 @@ export class SignupForm extends LitElement {
   validations = {
     company: (elem, data) => {
       if (!elem.value) {
-        return 'Please provide a short name for your organization!'
+        return 'Short Name required!'
       }
     },
     email: (elem, data) => {
       if (!elem.value) {
-        return 'Please enter your email address. This is your username used for login. We will never share it with anybody.'
+        return 'Enter your email address!'
       }
       if (elem.validity.typeMismatch) {
-        return 'Please enter a valid email address. This is your username used for login. We will never share it with anybody.'
+        return 'Valid email address required!'
       }
     },
     password: (elem, data) => {
@@ -47,7 +47,7 @@ export class SignupForm extends LitElement {
     },
     password2: (elem, data) => {
       if (!elem.value) {
-        return 'Please confirm your password!'
+        return 'Confirm your password!'
       }
       if (data.password != data.password2) {
         return 'Passwords are not the same!'
