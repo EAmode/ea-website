@@ -1,0 +1,42 @@
+header {
+  background-color: var(--ea-background-transparent-1);
+  border-bottom: var(--ea-border-1);
+
+  &.navbar {
+    padding: calc(var(--ea-spacer) * 1em) 0;
+  }
+  .navbar-brand {
+    color: var(--ea-color-1);
+    padding: 0 calc(var(--ea-spacer) * 2em) 0 0;
+    svg {
+      height: 3em;
+    }
+  }
+  .navbar-toggler {
+    color: var(--ea-color-1);
+  }
+  nav.ea-nav {
+    padding: calc(var(--ea-spacer) * 1em) 0;
+    --ea-sizer: 1.2;
+    font-weight: 600;
+  }
+  --ea-nav-hover-color: var(--ea-color-1);
+
+  div.grow {
+    flex-grow: 1;
+  }
+
+  div.action {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    ea-color-scheme-toggle {
+      color: var(--ea-color-1);
+    }
+  }
+
+  button.action {
+    white-space: nowrap;
+  }
+}

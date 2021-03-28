@@ -60,70 +60,21 @@
   </header>
 
   <main>
-
-    <section class="signup">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-3"></div>
-          <div class="col-sm-6">
-            <h2>Try "EA Mode" for Free</h2>
-            <p>No credit card required. Cancel anytime.</p>
-            <hr class="my-4">
-            <form id="create-tenant" class="needs-validation" novalidate="">
-              <div class="row g-3">
-                <div class="col-sm-12">
-                  <label for="company" class="form-label">Select a Short Name</label>
-                  <div class="company-input">
-                    <input name="company" type="text" class="form-control" id="company" placeholder="company">
-                    <p>.eamode.cloud</p>
-                  </div>
-                  <div id="companyHelp" class="form-text">One word, no spaces, no special characters! Becomes part of
-                    your individual URL.</div>
-                </div>
-
-                <div class="col-12">
-                  <label for="email" class="form-label">Email</span></label>
-                  <input name="email" type="email" class="form-control" id="email" placeholder="you@example.com"
-                    required="">
-                  <div class="invalid-feedback">
-                    Please enter a valid email address. This is your username used for login. We will never share it
-                    with anybody.
-                  </div>
-                </div>
-
-                <div class="col-12">
-                  <label for="password" class="form-label">Create a password</label>
-                  <input name="password" type="password" class="form-control" id="password">
-                  <div id="password-meter">
-                   
-                  </div>
-                </div>
-
-
-
-                <div class="col-12">
-                  <label for="password" class="form-label">Confirm your password</label>
-                  <input name="password2" type="password" class="form-control" id="password2">
-                </div>
-
-                <hr class="my-4">
-
-                <button class="ea-button" primary lg type="submit">Create your Mode</button>
-            </form>
-          </div>
-          <div class="col-sm-3"></div>
-        </div>
-      </div>
-    </section>
-
+    <signup-form></signup-form>
   </main>
 
-  </div>
+  <footer>
+    <site-footer></site-footer>
+  </footer>
+
 </body>
 
 <script src="https://unpkg.com/rxjs/bundles/rxjs.umd.min.js"></script>
+<script src="https://cdn.rawgit.com/kimmobrunfeldt/progressbar.js/1.0.1/dist/progressbar.js"></script>
 <script type="module" src="./out-tsc/src/eamode-website.js"></script>
 <script type="module" src="./out-tsc/src/create-tenant.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 
 </body>
 
