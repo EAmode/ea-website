@@ -191,12 +191,6 @@ export class SignupForm extends LitElement {
     window.location.href = `https://${this.data.company}.eamode.cloud`
   }
 
-  connectedCallback() {
-    super.connectedCallback()
-
-    console.log('connected')
-  }
-
   async onSubmit(event: any) {
     event.preventDefault()
     const { data, validity } = parseElements(
@@ -207,7 +201,6 @@ export class SignupForm extends LitElement {
     )
     this.data = data
     this.errors = validity.errors
-    console.log(Object.values(this.errors).length)
 
     if (validity.valid) {
       const body = JSON.stringify({
@@ -249,7 +242,6 @@ export class SignupForm extends LitElement {
     const result = parseElement(e.target, this.data, this.validations.password2, this.errors)
     this.data = result.data
     this.errors = result.errors
-    console.log(result)
   }
 
   onPw(e: any) {
@@ -290,9 +282,6 @@ function parseElement(elem, data = {}, validation = undefined, errors = {}) {
 }
 
 function parseElements(elems, data = {}, validations = undefined, errors = {}) {
-  // if (elem.name === undefined) {
-  //   throw 'Element needs a name!'
-  // }
   for (const elem of elems) {
     if (elem.name) {
       data[elem.name] = elem.value
@@ -312,13 +301,8 @@ function parseElements(elems, data = {}, validations = undefined, errors = {}) {
           elem.classList.remove('invalid')
         }
       }
-      console.log(elem.classList)
     }
   }
-
-  // if (validation) {
-  //   errors[elem.name] = validation(elem, data)
-  // }
 
   return {
     data: Object.assign({}, data),
