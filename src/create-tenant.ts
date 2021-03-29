@@ -2,7 +2,7 @@ declare const ProgressBar
 
 import { LitElement, html, property, customElement } from 'lit-element'
 
-const url = 'http://localhost:4001/ea/event'
+const url = 'https://mode.eamode.cloud/ea/event'
 
 @customElement('signup-form')
 export class SignupForm extends LitElement {
