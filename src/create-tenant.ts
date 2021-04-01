@@ -1,8 +1,12 @@
 declare const ProgressBar
 
 import { LitElement, html, property, customElement } from 'lit-element'
+import { Subject } from 'rxjs'
+import { debounceTime } from 'rxjs/operators'
+import { checkMark, error } from './svg'
 
-const url = 'https://mode.eamode.cloud/ea/event'
+const url = 'https://mode.eamode.cloud/'
+// const url = 'http://localhost:4001/'
 
 @customElement('signup-form')
 export class SignupForm extends LitElement {
@@ -55,6 +59,35 @@ export class SignupForm extends LitElement {
     }
   }
 
+  @property({ type: Boolean }) available: boolean
+
+  companyInputSubject = new Subject()
+  sub = this.companyInputSubject.pipe(debounceTime(750)).subscribe(async (e: any) => {
+    const tenant = e.target.value
+    if(!tenant){
+      this.available = undefined
+      return
+    }
+    try {
+      const resp = await fetch(url + tenant)
+      if (resp.status === 404) {
+        this.available = true
+      } else if (resp.status === 200) {
+        this.available = false
+      } else {
+        this.available = undefined
+      }
+    } catch (err) {
+      console.log(err)
+    }
+  })
+
+  disconnectedCallback() {
+    if (this.sub) {
+      this.sub.unsubscribe()
+    }
+  }
+
   render() {
     return html` ${this.creatingEnvironment
       ? html`<section class="creatingEnvironment">
@@ -96,8 +129,15 @@ export class SignupForm extends LitElement {
                       placeholder="company"
                       aria-describedby="shortname-constraints"
                       required
+                      @input=${e => this.companyInputSubject.next(e)}
                     />
                     <p>.eamode.cloud</p>
+                    ${this.available === true
+                      ? html`<div class="available">${checkMark} still available!</div>`
+                      : undefined}
+                    ${this.available === false
+                      ? html`<div class="taken">${error} name already taken!</div>`
+                      : undefined}
                   </div>
                   ${this.errors?.company
                     ? html`<div class="error" aria-live="polite">${this.errors?.company}</div>`
@@ -139,8 +179,8 @@ export class SignupForm extends LitElement {
                     type="password"
                     autocomplete="new-password"
                     class="form-control"
-                    required
                     @input=${this.onPw}
+                    required
                   />
                   ${this.errors?.password
                     ? html`<div class="error" aria-live="polite">${this.errors?.password}</div>`
@@ -215,7 +255,7 @@ export class SignupForm extends LitElement {
           }
         ]
       })
-      const createTenantResp = await fetch(url, {
+      const createTenantResp = await fetch(url + 'ea/event', {
         method: 'post',
         body,
         headers: { 'Content-Type': 'application/json' }
@@ -235,6 +275,16 @@ export class SignupForm extends LitElement {
       setTimeout(() => {
         this.ready = true
       }, this.duration)
+    }
+  }
+
+  async onCompany(e: any) {
+    console.log(e.target.value)
+    try {
+      const resp = await fetch(url + e.target.value)
+      console.log(resp)
+    } catch (err) {
+      console.log(err)
     }
   }
 

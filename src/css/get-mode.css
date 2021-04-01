@@ -9,7 +9,7 @@ section.signup {
   }
   .company-input {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     input {
       min-width: 6em;
       max-width: 8em;
@@ -17,6 +17,20 @@ section.signup {
     p {
       font-size: calc(var(--ea-sizer) * 1.8em);
       margin: 0;
+    }
+    .available {
+      padding-left: 0.8em;
+      color: green;
+      svg {
+        height: 1.2em;
+      }
+    }
+    .taken {
+      padding-left: 0.8em;
+      color: red;
+      svg {
+        height: 1.2em;
+      }
     }
   }
   input.invalid {
