@@ -256,7 +256,7 @@ export class SignupForm extends LitElement {
             id: '123',
             data: {
               name: this.data.company,
-              email: this.data.email,
+              user: this.data.email,
               password: this.data.password
             }
           }
