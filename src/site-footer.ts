@@ -1,9 +1,4 @@
-import { range } from 'rxjs'
-import { take, map, filter } from 'rxjs/operators'
-import { render } from 'lit-html'
-import { timer } from 'rxjs'
-
-import { LitElement, html, property, customElement } from 'lit-element'
+import { LitElement, html, customElement } from 'lit-element'
 
 @customElement('site-footer')
 export class SiteFooter extends LitElement {
@@ -79,7 +74,7 @@ export class SiteFooter extends LitElement {
                     ></a>
                   </li>
                   <li>
-                    <a href="https://www.linkedin.com/company/ea-mode/" aria-label="linked-in">
+                    <a href="https://www.linkedin.com/company/ea-mode/" target="_blank" aria-label="linked-in">
                       <svg
                         aria-hidden="true"
                         focusable="false"
@@ -97,7 +92,7 @@ export class SiteFooter extends LitElement {
                     ></a>
                   </li>
                   <li>
-                    <a href="https://github.com/EAmode" target="blank" aria-label="github">
+                    <a href="https://github.com/EAmode" target="_blank" aria-label="github">
                       <svg
                         aria-hidden="true"
                         focusable="false"

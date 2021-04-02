@@ -27,7 +27,7 @@ section.signup {
     }
     .taken {
       padding-left: 0.8em;
-      color: red;
+      color: #a02727;
       svg {
         height: 1.2em;
       }

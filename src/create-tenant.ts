@@ -1,9 +1,9 @@
-declare const ProgressBar
-
 import { LitElement, html, property, customElement } from 'lit-element'
 import { Subject } from 'rxjs'
 import { debounceTime } from 'rxjs/operators'
 import { checkMark, error } from './svg'
+
+declare const ProgressBar
 
 const url = 'https://mode.eamode.cloud/'
 // const url = 'http://localhost:4001/'
@@ -35,6 +35,9 @@ export class SignupForm extends LitElement {
       if (!elem.value) {
         return 'Short Name required!'
       }
+      if (this.available === false) {
+        return 'Choose a different short name!'
+      }
     },
     email: (elem, data) => {
       if (!elem.value) {
@@ -62,6 +65,7 @@ export class SignupForm extends LitElement {
   @property({ type: Boolean }) available: boolean
 
   companyInputSubject = new Subject()
+
   sub = this.companyInputSubject.pipe(debounceTime(750)).subscribe(async (e: any) => {
     const tenant = e.target.value
     if(!tenant){
@@ -72,10 +76,13 @@ export class SignupForm extends LitElement {
       const resp = await fetch(url + tenant)
       if (resp.status === 404) {
         this.available = true
+        e.target.classList.remove('invalid')
       } else if (resp.status === 200) {
         this.available = false
+        e.target.classList.add('invalid')
       } else {
         this.available = undefined
+        e.target.classList.remove('invalid')
       }
     } catch (err) {
       console.log(err)
@@ -242,7 +249,7 @@ export class SignupForm extends LitElement {
     this.data = data
     this.errors = validity.errors
 
-    if (validity.valid) {
+    if (validity.valid && this.available === true) {
       const body = JSON.stringify({
         events: [
           {
@@ -255,14 +262,14 @@ export class SignupForm extends LitElement {
           }
         ]
       })
-      const createTenantResp = await fetch(url + 'ea/event', {
+      const createTenantResp = await fetch(`${url  }ea/event`, {
         method: 'post',
         body,
         headers: { 'Content-Type': 'application/json' }
       })
       this.creatingEnvironment = true
       setTimeout(() => {
-        var circle = new ProgressBar.Circle('#progress', {
+        const circle = new ProgressBar.Circle('#progress', {
           strokeWidth: 8,
           easing: 'linear',
           duration: this.duration,
@@ -275,16 +282,6 @@ export class SignupForm extends LitElement {
       setTimeout(() => {
         this.ready = true
       }, this.duration)
-    }
-  }
-
-  async onCompany(e: any) {
-    console.log(e.target.value)
-    try {
-      const resp = await fetch(url + e.target.value)
-      console.log(resp)
-    } catch (err) {
-      console.log(err)
     }
   }
 
@@ -327,7 +324,7 @@ function parseElement(elem, data = {}, validation = undefined, errors = {}) {
 
   return {
     data,
-    errors: Object.assign({}, errors)
+    errors: { ...errors}
   }
 }
 
@@ -355,27 +352,27 @@ function parseElements(elems, data = {}, validations = undefined, errors = {}) {
   }
 
   return {
-    data: Object.assign({}, data),
+    data: { ...data},
     validity: {
       valid,
-      errors: Object.assign({}, errors)
+      errors: { ...errors}
     }
   }
 }
 
 function scorePassword(pass: string) {
-  var score = 0
+  let score = 0
   if (!pass) return score
 
   // award every unique letter until 5 repetitions
-  var letters = new Object()
-  for (var i = 0; i < pass.length; i++) {
+  const letters = new Object()
+  for (let i = 0; i < pass.length; i++) {
     letters[pass[i]] = (letters[pass[i]] || 0) + 1
     score += 5.0 / letters[pass[i]]
   }
 
   // bonus points for mixing it up
-  var variations = {
+  const variations = {
     digits: /\d/.test(pass),
     lower: /[a-z]/.test(pass),
     upper: /[A-Z]/.test(pass),
@@ -383,7 +380,7 @@ function scorePassword(pass: string) {
   }
 
   let variationCount = 0
-  for (var check in variations) {
+  for (const check in variations) {
     variationCount += variations[check] == true ? 1 : 0
   }
   score += (variationCount - 1) * 10
