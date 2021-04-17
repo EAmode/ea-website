@@ -1,7 +1,8 @@
 import { LitElement, html, property, customElement } from 'lit-element'
 import { Subject } from 'rxjs'
 import { debounceTime } from 'rxjs/operators'
-import { checkMark, error } from './svg'
+import { Form } from '@eamode/eang'
+import { checkMark, error } from './svg.js'
 
 declare const ProgressBar
 
@@ -240,7 +241,7 @@ export class SignupForm extends LitElement {
 
   async onSubmit(event: any) {
     event.preventDefault()
-    const { data, validity } = parseElements(
+    const { data, validity } = Form.parseElements(
       event.target.elements,
       this.data,
       this.validations,
@@ -286,13 +287,13 @@ export class SignupForm extends LitElement {
   }
 
   onPw2(e: any) {
-    const result = parseElement(e.target, this.data, this.validations.password2, this.errors)
+    const result = Form.parseElement(e.target, this.data, this.validations.password2, this.errors)
     this.data = result.data
     this.errors = result.errors
   }
 
   onPw(e: any) {
-    const result = parseElement(e.target, this.data, this.validations.password, this.errors)
+    const result = Form.parseElement(e.target, this.data, this.validations.password, this.errors)
     this.data = result.data
     this.errors = result.errors
 
@@ -311,54 +312,6 @@ export class SignupForm extends LitElement {
   }
 }
 
-function parseElement(elem, data = {}, validation = undefined, errors = {}) {
-  if (elem.name === undefined) {
-    throw 'Element needs a name!'
-  }
-
-  data[elem.name] = elem.value
-
-  if (validation) {
-    errors[elem.name] = validation(elem, data)
-  }
-
-  return {
-    data,
-    errors: { ...errors}
-  }
-}
-
-function parseElements(elems, data = {}, validations = undefined, errors = {}) {
-  for (const elem of elems) {
-    if (elem.name) {
-      data[elem.name] = elem.value
-    }
-  }
-  let valid = true
-  if (validations) {
-    for (const [key, validation] of Object.entries(validations) as [string, any]) {
-      const elem = elems[key]
-      if (elem) {
-        const errMsg = validation(elem, data)
-        errors[elem.name] = errMsg
-        if (errMsg) {
-          elem.classList.add('invalid')
-          valid = false
-        } else {
-          elem.classList.remove('invalid')
-        }
-      }
-    }
-  }
-
-  return {
-    data: { ...data},
-    validity: {
-      valid,
-      errors: { ...errors}
-    }
-  }
-}
 
 function scorePassword(pass: string) {
   let score = 0

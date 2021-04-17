@@ -3,4 +3,4 @@
 
 import '@eamode/eang';
 
-import './site-footer';
+import './site-footer.js';
