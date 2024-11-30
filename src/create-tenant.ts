@@ -1,4 +1,6 @@
-import { LitElement, html, property, customElement } from 'lit-element'
+import { html, LitElement } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
+
 import { Subject } from 'rxjs'
 import { debounceTime } from 'rxjs/operators'
 import { Form } from '@eamode/eang'
@@ -69,7 +71,7 @@ export class SignupForm extends LitElement {
 
   sub = this.companyInputSubject.pipe(debounceTime(750)).subscribe(async (e: any) => {
     const tenant = e.target.value
-    if(!tenant){
+    if (!tenant) {
       this.available = undefined
       return
     }
@@ -263,7 +265,7 @@ export class SignupForm extends LitElement {
           }
         ]
       })
-      const createTenantResp = await fetch(`${url  }ea/event`, {
+      const createTenantResp = await fetch(`${url}ea/event`, {
         method: 'post',
         body,
         headers: { 'Content-Type': 'application/json' }
@@ -311,7 +313,6 @@ export class SignupForm extends LitElement {
     }
   }
 }
-
 
 function scorePassword(pass: string) {
   let score = 0
