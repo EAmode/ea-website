@@ -2,7 +2,7 @@
 /* index.html */
 .banner {
     /* width: 100%; */
-    background: url(/assets/images/slider.jpg) var(--ea-color-1) no-repeat center
+    background: url(/src/assets/images/slider.jpg) var(--ea-color-1) no-repeat center
       center;
     background-size: cover;
     color: var(--ea-text-color-light);

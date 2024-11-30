@@ -1,81 +1,26 @@
 {
-  "scripts": {
-    "lint": "eslint --ext .ts,.html . --ignore-path .gitignore && prettier \"**/*.ts\" --check --ignore-path .gitignore",
-    "format": "eslint --ext .ts,.html . --fix --ignore-path .gitignore && prettier \"**/*.ts\" --write --ignore-path .gitignore",
-    "build": "rimraf dist && tsc && rollup -c rollup.config.js && npm run css -- --dir dist/css --env production --no-map",
-    "start:build": "npm run build && web-dev-server --root-dir dist --app-index index.html --open --compatibility none",
-    "start": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds\" \"npm run css -- --dir css -w\"",
-    "precss": "rimraf css",
-    "css": "postcss \"./src/styles.css\" ",
-    "update:prod": "npm run build && eactl update website eamode.com dist/ -e mode"
-  },
   "name": "ea-website",
-  "version": "0.0.1",
-  "description": "EA Mode Website",
-  "author": "EA Mode LLC",
-  "license": "MIT",
+  "private": true,
+  "version": "0.0.0",
   "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "format": "prettier \"**/*.ts\" --write --ignore-path .gitignore"
+  },
   "dependencies": {
     "@eamode/eang": "^5.0.3",
-    "lit-element": "^4.1.1",
-    "lit-html": "^3.2.1",
+    "lit": "^3.2.1",
     "progressbar.js": "^1.1.1",
     "rxjs": "^7.8.1"
   },
   "devDependencies": {
-    "@open-wc/building-rollup": "^3.0.2",
-    "@open-wc/eslint-config": "^12.0.3",
     "@types/progressbar.js": "^1.1.7",
-    "@typescript-eslint/eslint-plugin": "^8.16.0",
-    "@typescript-eslint/parser": "^8.16.0",
-    "@web/dev-server": "^0.4.6",
     "bootstrap": "^5.3.3",
-    "concurrently": "^9.1.0",
-    "cssnano": "^7.0.6",
-    "cssnano-preset-default": "^7.0.6",
-    "deepmerge": "^4.3.1",
-    "eslint": "^9.16.0",
-    "eslint-config-prettier": "^9.1.0",
-    "postcss": "^8.4.49",
-    "postcss-cli": "^11.0.0",
-    "postcss-import": "^16.1.0",
-    "postcss-mixins": "^11.0.3",
-    "postcss-nested": "^7.0.2",
     "prettier": "^3.4.1",
-    "rimraf": "^6.0.1",
-    "rollup": "^4.27.4",
-    "rollup-plugin-copy": "^3.5.0",
-    "tslib": "^2.8.1",
-    "typescript": "^5.7.2"
-  },
-  "overrides": {
-    "rollup-plugin-copy": {
-      "globby": "^11.0.0"
-    }
-  },
-  "eslintConfig": {
-    "parser": "@typescript-eslint/parser",
-    "extends": [
-      "@open-wc/eslint-config",
-      "eslint-config-prettier"
-    ],
-    "plugins": [
-      "@typescript-eslint"
-    ],
-    "rules": {
-      "no-unused-vars": "off",
-      "@typescript-eslint/no-unused-vars": [
-        "error"
-      ],
-      "import/no-unresolved": "off",
-      "import/extensions": [
-        "error",
-        "always",
-        {
-          "ignorePackages": true
-        }
-      ]
-    }
+    "typescript": "~5.7.2",
+    "vite": "^6.0.1"
   },
   "prettier": {
     "semi": false,
@@ -83,12 +28,5 @@
     "arrowParens": "avoid",
     "printWidth": 100,
     "trailingComma": "none"
-  },
-  "lint-staged": {
-    "*.ts": [
-      "eslint --fix",
-      "prettier --write",
-      "git add"
-    ]
   }
 }

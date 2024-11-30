@@ -1,12 +1,14 @@
 import { html, LitElement } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import '@eamode/eang'
 
+import './site-footer.js'
 import { Subject } from 'rxjs'
 import { debounceTime } from 'rxjs/operators'
 import { Form } from '@eamode/eang'
 import { checkMark, error } from './svg.js'
 
-declare const ProgressBar
+import * as ProgressBar from 'progressbar.js'
 
 const url = 'https://mode.eamode.cloud/'
 // const url = 'http://localhost:4001/'
@@ -21,7 +23,7 @@ export class SignupForm extends LitElement {
 
   duration = 25000
 
-  strength = {
+  strength: { [key: number]: string } = {
     1: 'worst ☹',
     2: 'bad ☹',
     3: 'weak ☹',
@@ -29,12 +31,12 @@ export class SignupForm extends LitElement {
     5: 'strong ☻'
   }
 
-  data
+  data: any
 
-  @property({ type: Object }) errors
+  @property({ type: Object }) errors: any
 
   validations = {
-    company: (elem, data) => {
+    company: (elem: any) => {
       if (!elem.value) {
         return 'Short Name required!'
       }
@@ -42,7 +44,7 @@ export class SignupForm extends LitElement {
         return 'Choose a different short name!'
       }
     },
-    email: (elem, data) => {
+    email: (elem: any) => {
       if (!elem.value) {
         return 'Enter your email address!'
       }
@@ -50,29 +52,29 @@ export class SignupForm extends LitElement {
         return 'Valid email address required!'
       }
     },
-    password: (elem, data) => {
+    password: (elem: any) => {
       if (!elem.value) {
         return 'Password required!'
       }
     },
-    password2: (elem, data) => {
+    password2: (elem: any) => {
       if (!elem.value) {
         return 'Confirm your password!'
       }
-      if (data.password != data.password2) {
+      if (this.data.password != this.data.password2) {
         return 'Passwords are not the same!'
       }
     }
   }
 
-  @property({ type: Boolean }) available: boolean
+  @property({ type: Boolean }) available = false
 
   companyInputSubject = new Subject()
 
   sub = this.companyInputSubject.pipe(debounceTime(750)).subscribe(async (e: any) => {
     const tenant = e.target.value
     if (!tenant) {
-      this.available = undefined
+      this.available = false
       return
     }
     try {
@@ -84,7 +86,7 @@ export class SignupForm extends LitElement {
         this.available = false
         e.target.classList.add('invalid')
       } else {
-        this.available = undefined
+        this.available = false
         e.target.classList.remove('invalid')
       }
     } catch (err) {
@@ -139,7 +141,7 @@ export class SignupForm extends LitElement {
                       placeholder="company"
                       aria-describedby="shortname-constraints"
                       required
-                      @input=${e => this.companyInputSubject.next(e)}
+                      @input=${(e: any) => this.companyInputSubject.next(e)}
                     />
                     <p>.eamode.cloud</p>
                     ${this.available === true
@@ -265,7 +267,7 @@ export class SignupForm extends LitElement {
           }
         ]
       })
-      const createTenantResp = await fetch(`${url}ea/event`, {
+      await fetch(`${url}ea/event`, {
         method: 'post',
         body,
         headers: { 'Content-Type': 'application/json' }
@@ -319,7 +321,7 @@ function scorePassword(pass: string) {
   if (!pass) return score
 
   // award every unique letter until 5 repetitions
-  const letters = new Object()
+  const letters = {} as any
   for (let i = 0; i < pass.length; i++) {
     letters[pass[i]] = (letters[pass[i]] || 0) + 1
     score += 5.0 / letters[pass[i]]
@@ -335,7 +337,7 @@ function scorePassword(pass: string) {
 
   let variationCount = 0
   for (const check in variations) {
-    variationCount += variations[check] == true ? 1 : 0
+    variationCount += variations[check as keyof typeof variations] ? 1 : 0
   }
   score += (variationCount - 1) * 10
 
