@@ -1,4 +1,5 @@
-import { LitElement, html, customElement } from 'lit-element'
+import { html, LitElement } from 'lit'
+import { customElement } from 'lit/decorators.js'
 
 @customElement('site-footer')
 export class SiteFooter extends LitElement {
@@ -74,7 +75,11 @@ export class SiteFooter extends LitElement {
                     ></a>
                   </li>
                   <li>
-                    <a href="https://www.linkedin.com/company/ea-mode/" target="_blank" aria-label="linked-in">
+                    <a
+                      href="https://www.linkedin.com/company/ea-mode/"
+                      target="_blank"
+                      aria-label="linked-in"
+                    >
                       <svg
                         aria-hidden="true"
                         focusable="false"
