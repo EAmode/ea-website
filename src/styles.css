@@ -2,12 +2,12 @@
 
 @import '@eamode/eang/lib/css/_base.css';
 @import '@eamode/eang/lib/css/mode/variables.css';
-@import '@eamode/eang/lib/css/mode/fonts.css';
 @import '@eamode/eang/lib/css/mode/button.css';
 @import '@eamode/eang/lib/css/mode/nav.css';
 @import '@eamode/eang/lib/css/mode/card.css';
 
 @import './css/index.css';
+@import './font-roboto.css';
 @import './css/get-mode.css';
 @import './css/site-footer.css';
 @import './css/site-header.css';

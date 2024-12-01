@@ -1,4 +1,3 @@
-
 /* index.html */
 .banner {
     /* width: 100%; */
@@ -6,7 +5,7 @@
       center;
     background-size: cover;
     color: var(--ea-text-color-light);
-  
+
     .content {
       padding: calc(var(--ea-spacer) * 16em) 0;
       text-align: center;
@@ -20,7 +19,7 @@
       padding: calc(var(--ea-spacer) * 1.2em) 0;
     }
   }
-  
+
   section {
     position: relative;
     padding: calc(var(--ea-spacer) * 6em) 0;
@@ -50,7 +49,7 @@
         aspect-ratio: attr(width) / attr(height);
       }
     }
-  
+
     .image-col {
       padding: 0 0 calc(var(--ea-spacer) * 4em) 0;
       img {
@@ -63,7 +62,7 @@
         margin-right: auto;
       }
     }
-  
+
     .text-bold {
       color: var(--ea-color-1a);
       font-weight: 600;
