@@ -10,8 +10,7 @@ import { checkMark, error } from './svg.js'
 
 import * as ProgressBar from 'progressbar.js'
 
-const url = 'https://mode.eamode.cloud/'
-// const url = 'http://localhost:4001/'
+const url = 'https://mode.eamode.cloud'
 
 @customElement('signup-form')
 export class SignupForm extends LitElement {
@@ -73,12 +72,20 @@ export class SignupForm extends LitElement {
 
   sub = this.companyInputSubject.pipe(debounceTime(750)).subscribe(async (e: any) => {
     const tenant = e.target.value
-    if (!tenant) {
+    const reservedTenantNames = [
+      'ea',
+      'mode',
+      'eamode',
+      'eamodecloud',
+      'eamode.cloud',
+      'eamodecloud.com'
+    ]
+    if (!tenant || reservedTenantNames.includes(tenant)) {
       this.available = false
       return
     }
     try {
-      const resp = await fetch(url + tenant)
+      const resp = await fetch(`${url}/rest/${tenant}/mode/v1`)
       if (resp.status === 404) {
         this.available = true
         e.target.classList.remove('invalid')
@@ -178,7 +185,7 @@ export class SignupForm extends LitElement {
                   ? html` <div class="error" aria-live="polite">${this.errors?.email}</div>`
                   : undefined}
                 <div id="email-constraints" class="form-text">
-                  This is your login username. We will never share it with anybody.
+                  This is your login username. We will send you a confirmation email.
                 </div>
               </div>
 
