@@ -10,7 +10,8 @@ import { checkMark, error } from './svg.js'
 
 import * as ProgressBar from 'progressbar.js'
 
-const url = 'https://mode.eamode.cloud'
+// const url = 'https://ea.eamode.cloud'
+const url = 'http://localhost:3000'
 
 @customElement('signup-form')
 export class SignupForm extends LitElement {
@@ -66,11 +67,14 @@ export class SignupForm extends LitElement {
     }
   }
 
-  @property({ type: Boolean }) available = false
+  @property({ type: Boolean }) available = true
 
   companyInputSubject = new Subject()
 
+  @property({ type: String }) companyVal = ''
+
   sub = this.companyInputSubject.pipe(debounceTime(750)).subscribe(async (e: any) => {
+    this.companyVal = e.target.value
     const tenant = e.target.value
     const reservedTenantNames = [
       'ea',
@@ -151,10 +155,10 @@ export class SignupForm extends LitElement {
                       @input=${(e: any) => this.companyInputSubject.next(e)}
                     />
                     <p>.eamode.cloud</p>
-                    ${this.available === true
+                    ${this.available === true && this.companyVal.length > 0
                       ? html`<div class="available">${checkMark} still available!</div>`
                       : undefined}
-                    ${this.available === false
+                    ${this.available === false && this.companyVal.length > 0
                       ? html`<div class="taken">${error} name already taken!</div>`
                       : undefined}
                   </div>
@@ -262,19 +266,16 @@ export class SignupForm extends LitElement {
     this.errors = validity.errors
 
     if (validity.valid && this.available === true) {
-      const body = JSON.stringify({
-        events: [
-          {
-            id: '123',
-            data: {
-              name: this.data.company,
-              user: this.data.email,
-              password: this.data.password
-            }
+      const body = JSON.stringify(
+        {
+          instanceOf: 'Event__Mode_Tenant_Create_Request',
+          attributes: {
+            name: this.data.company,
+            user: this.data.email,
+            password: this.data.password
           }
-        ]
-      })
-      await fetch(`${url}ea/event`, {
+        })
+      await fetch(`${url}/rest/ea/mode/v1/event`, {
         method: 'post',
         body,
         headers: { 'Content-Type': 'application/json' }
