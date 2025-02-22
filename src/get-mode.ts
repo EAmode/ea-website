@@ -10,8 +10,8 @@ import { checkMark, error } from './svg.js'
 
 import * as ProgressBar from 'progressbar.js'
 
-// const url = 'https://ea.eamode.cloud'
-const url = 'http://localhost:3000'
+const url = 'https://mode.eamode.cloud'
+// const url = 'http://localhost:3000'
 
 @customElement('signup-form')
 export class SignupForm extends LitElement {
