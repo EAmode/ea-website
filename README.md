@@ -1,8 +1,15 @@
-## ea-website
+# ea-website
 
+```sh
+# Debug with vite
+npm run dev
+```
 
-## Tooling configs
+## Deploy PROD
 
-For most of the tools, the configuration is in the `package.json` to reduce the amount of files in your project.
+https://eamode.com
 
-If you customize the configuration a lot, you can consider moving them to individual files.
+```sh
+# pushes new website to PROD (https://eamode.com)
+npm run deploy
+```
