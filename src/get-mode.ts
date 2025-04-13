@@ -270,12 +270,12 @@ export class SignupForm extends LitElement {
         {
           instanceOf: 'Event__Mode_Tenant_Create_Request',
           attributes: {
-            name: this.data.company,
+            tenant: this.data.company,
             user: this.data.email,
             password: this.data.password
           }
         })
-      await fetch(`${url}/rest/ea/mode/v1/event`, {
+      await fetch(`${url}/rest/ea/mode/v1/event_instance`, {
         method: 'post',
         body,
         headers: { 'Content-Type': 'application/json' }

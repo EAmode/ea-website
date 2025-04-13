@@ -13,16 +13,16 @@
   },
   "dependencies": {
     "@eamode/eang": "^5.0.3",
-    "lit": "^3.2.1",
+    "lit": "^3.3.0",
     "progressbar.js": "^1.1.1",
-    "rxjs": "^7.8.1"
+    "rxjs": "^7.8.2"
   },
   "devDependencies": {
     "@types/progressbar.js": "^1.1.7",
-    "bootstrap": "^5.3.3",
-    "prettier": "^3.4.1",
+    "bootstrap": "^5.3.5",
+    "prettier": "^3.4.3",
     "typescript": "~5.7.2",
-    "vite": "^6.0.1"
+    "vite": "^6.2.6"
   },
   "prettier": {
     "semi": false,
